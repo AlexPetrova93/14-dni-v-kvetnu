@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TexturePainter : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class TexturePainter : MonoBehaviour
     
     public bool UseBrush;
     public Texture2D Brush;
+
+    public UnityEvent OnPaintingComplete { get; } = new ();
     
     // private
     private Camera _cam;
@@ -22,6 +25,13 @@ public class TexturePainter : MonoBehaviour
     private static readonly int Mask = Shader.PropertyToID("_Mask");
     private byte[] _brushPixels;
     private Vector2 _brushSize;
+
+    private bool _gameOn;
+
+    public void StartGame()
+    {
+        _gameOn = true;
+    }
     
     private void Start()
     {
@@ -42,7 +52,11 @@ public class TexturePainter : MonoBehaviour
 
     private void Update()
     {
+        if (!_gameOn) return;
+        
+        #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.R)) ResetTexture();
+        #endif
 
         if (Input.GetMouseButton(0))
         {
