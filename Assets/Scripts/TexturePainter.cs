@@ -1,54 +1,66 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class TexturePainter : MonoBehaviour
 {
+    public float DebugCompleteFactor;
+    
     public Material SpriteMaterial;
     public Texture2D PaintMask;
 
-    public float BrushSize = 50;
-    
-    public bool UseBrush;
-    public Texture2D Brush;
+    public Texture2D[] PhaseTextures;
 
+    public bool UseBrush;
+    public float BrushSize = 50;
+    public Texture2D Brush;
+    
     public UnityEvent OnPaintingComplete { get; } = new ();
     
     // private
     private Camera _cam;
     private SpriteRenderer _renderer;
     private Sprite _sprite;
-    private byte[] _maskPixels;
-    private static readonly int Mask = Shader.PropertyToID("_Mask");
-    private byte[] _brushPixels;
-    private Vector2 _brushSize;
-
-    private bool _gameOn;
-
-    public void StartGame()
-    {
-        _gameOn = true;
-    }
     
-    private void Start()
+    private byte[] _maskPixels;
+    private byte[] _brushPixels;
+    
+    private Vector2 _brushSize;
+    
+    private bool _gameOn;
+    
+    private static readonly int Mask = Shader.PropertyToID("_Mask");
+    private static readonly int SecondTex = Shader.PropertyToID("_SecondTex");
+
+    public void Init(Camera cam)
     {
-        _cam = Camera.main; 
+        _cam = cam; 
         _renderer = GetComponent<SpriteRenderer>();
         _sprite = _renderer.sprite;
-        _maskPixels = new byte[PaintMask.width*PaintMask.height];
         if (UseBrush)
         {
             _brushPixels = new byte[Brush.width*Brush.height];
             _brushPixels = Brush.GetPixelData<byte>(0).ToArray();
             _brushSize = new Vector2(Brush.width, Brush.height);
         }
-        PaintMask = new Texture2D(PaintMask.width, PaintMask.height, TextureFormat.Alpha8, true);
-        PaintMask.filterMode = FilterMode.Bilinear;
-        SpriteMaterial.SetTexture(Mask, PaintMask);
+        _maskPixels = new byte[PaintMask.width*PaintMask.height];
     }
+    
+    public void StartGame(int phaseIndex)
+    {
+        PaintMask = new Texture2D(PaintMask.width, PaintMask.height, TextureFormat.Alpha8, true)
+        {
+            filterMode = FilterMode.Bilinear,
+        };
+        ResetTexture();
+        SpriteMaterial.SetTexture(Mask, PaintMask);
+        SpriteMaterial.SetTexture(SecondTex, PhaseTextures[phaseIndex%PhaseTextures.Length]);
+        _gameOn = true;
+    }
+
+    public void PauseGame() => _gameOn = false;
+    
+    public void ResumeGame() => _gameOn = true;
 
     private void Update()
     {
@@ -57,16 +69,25 @@ public class TexturePainter : MonoBehaviour
         #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.R)) ResetTexture();
         #endif
-
-        if (Input.GetMouseButton(0))
+        
+        var input = Utility.GetInput();
+        // TODO better input checks
+        if (input.Moved)
         {
+            // TODO better painting - lerp extra brush to mask between stroke frames
+            // ex. - when dist in mousepos btw this and last fram > threshold -> lerp extra frames (call Paint()) acc. to distance
             if (UseBrush) PaintBrush(Input.mousePosition);
             else Paint(Input.mousePosition);
         }
+        if (input.Ended) CheckCompleteFactor();
     }
-
-    private void ResetTexture()
+    
+    public void ResetTexture()
     {
+        PaintMask = new Texture2D(PaintMask.width, PaintMask.height, TextureFormat.Alpha8, true)
+        {
+            filterMode = FilterMode.Bilinear
+        };
         for (var i = 0; i < PaintMask.width; i++)
         {
             for (var j = 0; j < PaintMask.height; j++)
@@ -102,13 +123,32 @@ public class TexturePainter : MonoBehaviour
                     {
                         var idx = j * PaintMask.width + i;
                         var pixel = _maskPixels[idx];
-                        _maskPixels[idx] = (byte)Math.Clamp(pixel+255, 0, 255);
+                        var pixelByte = Math.Clamp(pixel + 255, 0, 255);
+                        _maskPixels[idx] = (byte)pixelByte;
                     }
                 }
                 
                 PaintMask.SetPixelData(_maskPixels,0);
                 PaintMask.Apply();
                 SpriteMaterial.SetTexture(Mask, PaintMask);
+        }
+    }
+
+    private void CheckCompleteFactor()
+    {
+        var factor = 0f;
+        foreach (var maskPixel in _maskPixels)
+        {
+            factor += maskPixel / 256f;
+        }
+
+        factor /= _maskPixels.Length;
+
+        DebugCompleteFactor = factor;
+        
+        if (factor > .6f)
+        {
+            OnPaintingComplete.Invoke();
         }
     }
     
