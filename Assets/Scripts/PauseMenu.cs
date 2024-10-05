@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
@@ -35,13 +32,13 @@ public class PauseMenu : MonoBehaviour
     public void Show()
     {
         var tr = (RectTransform)transform;
-        tr.DOAnchorPosX(0, .3f).OnComplete(() => _open = true);
+        tr.DOAnchorPosX(0, .15f).SetEase(Ease.OutSine).OnComplete(() => _open = true);
     }
     
     public void Hide()
     {
         _open = false;
         var tr = (RectTransform)transform;
-        tr.DOAnchorPosX(500, .3f);
+        tr.DOAnchorPosX(550, .15f).SetEase(Ease.InSine);
     }
 }

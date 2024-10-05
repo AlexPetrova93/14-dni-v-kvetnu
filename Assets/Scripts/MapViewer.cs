@@ -34,6 +34,7 @@ public class MapViewer : MonoBehaviour
     private bool _dragging;
     private bool _clicking;
     private bool _acceptInput;
+    private bool _canRunElementsMonologue;
 
     public void Init(MonologueManager monologueManager, Camera cam)
     {
@@ -95,7 +96,7 @@ public class MapViewer : MonoBehaviour
 
             if (clickedOnElement)
             {
-                StartCoroutine(RunElementMonologue(nodeName));
+                if (_canRunElementsMonologue) StartCoroutine(RunElementMonologue(nodeName));
                 _clickedElement.EndClick();
             }
             
@@ -123,10 +124,10 @@ public class MapViewer : MonoBehaviour
 
     private IEnumerator RunElementMonologue(MonologueNodeName nodeName)
     {
-        _acceptInput = false;
+        _canRunElementsMonologue = false;
         yield return _monologueManager.RunMonologue(nodeName);
         if (nodeName == RequiredNodeNames[_currentPhaseIndex]) OnRequiredElementFound.Invoke();
-        _acceptInput = true;
+        _canRunElementsMonologue = true;
     }
     
     public void StartPhase(int phaseIndex)
@@ -145,9 +146,12 @@ public class MapViewer : MonoBehaviour
         _acceptInput = true;
     }
 
+    public void ActivateElementsMonologue() => _canRunElementsMonologue = true;
+
     public void PauseInput()
     {
         _acceptInput = false;
+        _canRunElementsMonologue = false;
         _dragging = false;
         _clicking = false;
     }
@@ -156,5 +160,6 @@ public class MapViewer : MonoBehaviour
     {
         transform.DOMove(_mapDefaultPos, time);
         _acceptInput = false;
+        _canRunElementsMonologue = false;
     }
 }

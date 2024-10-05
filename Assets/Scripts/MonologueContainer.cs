@@ -1,13 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public enum MonologueNodeName
-{ // TODO Intro node for each phase? - or is this just PaintingComplete
-    Intro1, Mountains1, Willow1, Shore1, PaintingComplete1, 
-    Intro2, Mountains2, Willow2, Shore2, PaintingComplete2, 
-    Intro3, Mountains3, Willow3, Shore3, PaintingComplete3, 
+{ 
+    MapIntro1, Mountains1, Willow1, Shore1, PaintingComplete1, 
+    MapIntro2, Mountains2, Willow2, Shore2, PaintingComplete2, 
+    MapIntro3, Mountains3, Willow3, Shore3, PaintingComplete3,
+    PaintingComplete4, 
     Outro,
+    Intro,
     None
 }
 
@@ -15,9 +15,23 @@ public static class MonologueContainer
 {
     public static Dictionary<MonologueNodeName, string> Monologues = new Dictionary<MonologueNodeName, string>()
     {
-        { MonologueNodeName.Intro1, 
+        // ----------------------------------------------------------------------------------------------------
+        
+        { MonologueNodeName.Intro, 
             "Bydlim na tomhle ostrove od jakziva.\n" +
             "Neni tu moc co delat, takze vetsinu casu travim malbou." },
+        
+        
+        // ----------------------------------------------------------------------------------------------------
+        
+        
+        { MonologueNodeName.PaintingComplete1, 
+            "To jsem to ale krasne namaloval.\n" +
+            "Mohl bych se podivat, jak to vypada venku" },
+        
+        { MonologueNodeName.MapIntro1, 
+            "Krasny den.\n" +
+            "Porozhlednu se po okoli." },
         
         { MonologueNodeName.Mountains1, 
             "Tohle jsou mracne hory - koment 1" },
@@ -28,11 +42,14 @@ public static class MonologueContainer
         { MonologueNodeName.Shore1, 
             "Tohle je breh jezera - koment 1" },
         
-        { MonologueNodeName.PaintingComplete1, 
+        
+        // ----------------------------------------------------------------------------------------------------
+        
+        
+        { MonologueNodeName.PaintingComplete2, 
             "To jsem to ale krasne namaloval" },
         
-        
-        { MonologueNodeName.Intro2, 
+        { MonologueNodeName.MapIntro2, 
             "Dost se toho na mape meni.\n" +
             "Neni tu moc co delat, takze vetsinu casu travim malbou." },
         
@@ -45,13 +62,16 @@ public static class MonologueContainer
         { MonologueNodeName.Shore2, 
             "Tohle je breh jezera - koment 2" },
         
-        { MonologueNodeName.PaintingComplete2, 
+        
+        // ----------------------------------------------------------------------------------------------------
+        
+        
+        { MonologueNodeName.PaintingComplete3, 
             "To jsem to ale krasne namaloval" },
         
-        
-        { MonologueNodeName.Intro3, 
+        { MonologueNodeName.MapIntro3, 
             "Opet se toho dost na mape meni.\n" +
-            "Neni tu moc co delat, takze vetsinu casu travim malbou." },
+            "Mam pocit, ze to pleso byvalo mensi." },
         
         { MonologueNodeName.Mountains3, 
             "Tohle jsou mracne hory - koment 3" },
@@ -62,14 +82,18 @@ public static class MonologueContainer
         { MonologueNodeName.Shore3, 
             "Tohle je breh jezera - koment 3" },
         
-        { MonologueNodeName.PaintingComplete3, 
-            "To jsem to ale krasne namaloval" },
+        
+        // ----------------------------------------------------------------------------------------------------
         
         
+        { MonologueNodeName.PaintingComplete4, 
+            "Konecne jsem namaloval vrbu" },
+
         { MonologueNodeName.Outro, 
-            "Konecne jsem namaloval vrbu.\n" +
             "A timto muj vstup konci.\n" +
             "Umiram." },
+
+        // ----------------------------------------------------------------------------------------------------
     };
 
 }

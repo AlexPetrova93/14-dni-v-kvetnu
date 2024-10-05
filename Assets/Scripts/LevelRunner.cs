@@ -61,8 +61,9 @@ public class LevelRunner : MonoBehaviour
         MonologueManager.Init();
         TexturePainter.Init(Camera);
         MapViewer.Init(MonologueManager, Camera);
-
+        
         Fader.alpha = 1;
+        IntroScreen.alpha = 1;
         
         StartCoroutine(RunLevel());
     }
@@ -71,71 +72,71 @@ public class LevelRunner : MonoBehaviour
     private IEnumerator RunLevel()
     {
         Fader.Hide(.5f);
-        IntroScreen.alpha = 1;
         yield return new WaitForSeconds(.5f);
         yield return Utility.WaitForClick();
-        MapViewer.StartPhase(0);
-        yield return OpenDoor(0);
         IntroScreen.Hide(1f);
+        TexturePainter.ResetTexture(); // make sure the canvas is blank at the beginning
         yield return new WaitForSeconds(1f);
 
-        // redo - first painting, ten map
-        yield return RunPhase(0, MonologueNodeName.Intro1, MonologueNodeName.PaintingComplete1);
-        yield return RunPhaseEnd(1);
+        // INTRO
+        yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
         
-        yield return RunPhase(1, MonologueNodeName.Intro2, MonologueNodeName.PaintingComplete2);
-        yield return RunPhaseEnd(2);
+        // PHASE 1
+        yield return RunPaintingPhase(0, MonologueNodeName.PaintingComplete1);
+        yield return RunMapPhase(0, MonologueNodeName.MapIntro1);
         
-        yield return RunPhase(2, MonologueNodeName.Intro3, MonologueNodeName.PaintingComplete3);
+        // PHASE 2
+        yield return RunPaintingPhase(1, MonologueNodeName.PaintingComplete2);
+        yield return RunMapPhase(1, MonologueNodeName.MapIntro2);
         
-        // TODO Outro
+        // PHASE 3
+        yield return RunPaintingPhase(2, MonologueNodeName.PaintingComplete3);
+        yield return RunMapPhase(2, MonologueNodeName.MapIntro3);
+        
+        // FINAL PAINTING
+        yield return RunPaintingPhase(3, MonologueNodeName.PaintingComplete4);
+        TexturePainter.PauseGame();
+        
+        // OUTRO
         yield return MonologueManager.RunMonologue(MonologueNodeName.Outro);
         
         yield return RestartLevelRoutine();
     }
 
-    // Phase:
-    // 1. Run map monologue
-    // 2. Open Map
-    // 3. Wait for player to find mountains
-    // 4. Start painting
-    // 5. Wait for painting finished
-    private IEnumerator RunPhase(int phaseIndex, MonologueNodeName introNode, MonologueNodeName paintingDoneNode)
+    private IEnumerator RunPaintingPhase(int phaseIndex, MonologueNodeName paintingDoneNode)
     {
-        yield return MonologueManager.RunMonologue(introNode);
-        MapViewer.Activate();
-
-        yield return Utility.WaitUntilEvent(MapViewer.OnRequiredElementFound);
-        MapViewer.Deactivate(.5f);
-        TexturePainter.ResetTexture();
-        yield return CloseDoor();
-
         // start painting
         TexturePainter.StartGame(phaseIndex);
 
+        // wait until most is painted
         yield return Utility.WaitUntilEvent(TexturePainter.OnPaintingComplete);
         
-        Debug.Log("Painting finished!!!");
+        // run dialogue, which will signify you can open the door in first 3 phases
         yield return MonologueManager.RunMonologue(paintingDoneNode);
     }
     
-    // PhaseEnd:
-    // 1. Activate door handle
-    // 2. Wait for player to open the door
-    // 3. End painting game
-    // 4. Show the map for next phase
-    private IEnumerator RunPhaseEnd(int nextPhaseIndex)
+    private IEnumerator RunMapPhase(int phaseIndex, MonologueNodeName mapIntroNode)
     {
-            MapViewer.StartPhase(nextPhaseIndex); // start next phase before activating door handle
+        MapViewer.StartPhase(phaseIndex); // start next phase before activating door handle
         
-            // TODO activate door handle drag
+        // TODO activate door handle drag
         
-            // TODO wait for door drag
+        // TODO wait for door drag
         
-            TexturePainter.PauseGame();
-            yield return OpenDoor(); 
+        TexturePainter.PauseGame();
+        yield return OpenDoor(); 
             
-            TexturePainter.ResetTexture();
+        TexturePainter.ResetTexture();
+        MapViewer.Activate(); // allow map input
+
+        yield return MonologueManager.RunMonologue(mapIntroNode);
+        MapViewer.ActivateElementsMonologue(); // allow monologue after click on element
+        
+        yield return Utility.WaitUntilEvent(MapViewer.OnRequiredElementFound);
+        
+        MapViewer.Deactivate(.5f);
+        TexturePainter.ResetTexture();
+        yield return CloseDoor();
     }
 
     private IEnumerator OpenDoor(float animTime = .5f)
