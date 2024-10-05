@@ -33,14 +33,15 @@ public static class MonologueContainer
             "Krasny den.\n" +
             "Porozhlednu se po okoli." },
         
-        { MonologueNodeName.Mountains1, 
-            "Tohle jsou mracne hory - koment 1" },
-        
         { MonologueNodeName.Willow1, 
             "Tohle je pamatna vrba - koment 1" },
         
         { MonologueNodeName.Shore1, 
             "Tohle je breh jezera - koment 1" },
+        
+        { MonologueNodeName.Mountains1, 
+            "Tohle jsou mracne hory - koment 1.\n" +
+            "Cas jit je namalovat" },
         
         
         // ----------------------------------------------------------------------------------------------------
@@ -53,14 +54,15 @@ public static class MonologueContainer
             "Dost se toho na mape meni.\n" +
             "Neni tu moc co delat, takze vetsinu casu travim malbou." },
         
-        { MonologueNodeName.Mountains2, 
-            "Tohle jsou mracne hory - koment 2" },
-        
         { MonologueNodeName.Willow2, 
             "Tohle je pamatna vrba - koment 2" },
         
         { MonologueNodeName.Shore2, 
             "Tohle je breh jezera - koment 2" },
+        
+        { MonologueNodeName.Mountains2, 
+            "Tohle jsou mracne hory - koment 2.\n" +
+            "Cas jit je namalovat" },
         
         
         // ----------------------------------------------------------------------------------------------------
@@ -73,14 +75,15 @@ public static class MonologueContainer
             "Opet se toho dost na mape meni.\n" +
             "Mam pocit, ze to pleso byvalo mensi." },
         
-        { MonologueNodeName.Mountains3, 
-            "Tohle jsou mracne hory - koment 3" },
-        
         { MonologueNodeName.Willow3, 
             "Tohle je pamatna vrba - koment 3" },
         
         { MonologueNodeName.Shore3, 
             "Tohle je breh jezera - koment 3" },
+        
+        { MonologueNodeName.Mountains3, 
+            "Tohle jsou mracne hory - koment 3.\n" +
+            "Cas jit je namalovat" },
         
         
         // ----------------------------------------------------------------------------------------------------

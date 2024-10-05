@@ -76,10 +76,10 @@ public class LevelRunner : MonoBehaviour
         yield return Utility.WaitForClick();
         IntroScreen.Hide(1f);
         TexturePainter.ResetTexture(); // make sure the canvas is blank at the beginning
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(.5f);
 
         // INTRO
-        yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
+        //yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
         
         // PHASE 1
         yield return RunPaintingPhase(0, MonologueNodeName.PaintingComplete1);

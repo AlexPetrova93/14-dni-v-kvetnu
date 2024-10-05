@@ -4,13 +4,13 @@ using UnityEngine.Events;
 
 public class TexturePainter : MonoBehaviour
 {
-    public float DebugCompleteFactor;
-    
     public Material SpriteMaterial;
     public Texture2D PaintMask;
 
     public Texture2D[] PhaseTextures;
 
+    public float BrushMaxSpacing = 5;
+    
     public bool UseBrush;
     public float BrushSize = 50;
     public Texture2D Brush;
@@ -26,7 +26,9 @@ public class TexturePainter : MonoBehaviour
     private byte[] _brushPixels;
     
     private Vector2 _brushSize;
-    
+    private Vector2 _lastInputPos;
+
+    private bool _painting;
     private bool _gameOn;
     
     private static readonly int Mask = Shader.PropertyToID("_Mask");
@@ -62,6 +64,8 @@ public class TexturePainter : MonoBehaviour
     
     public void ResumeGame() => _gameOn = true;
 
+    private float _lastPaintTime;
+    
     private void Update()
     {
         if (!_gameOn) return;
@@ -71,15 +75,39 @@ public class TexturePainter : MonoBehaviour
         #endif
         
         var input = Utility.GetInput();
-        // TODO better input checks
-        if (input.Moved)
+        if (input.Began)
         {
-            // TODO better painting - lerp extra brush to mask between stroke frames
-            // ex. - when dist in mousepos btw this and last fram > threshold -> lerp extra frames (call Paint()) acc. to distance
-            if (UseBrush) PaintBrush(Input.mousePosition);
-            else Paint(Input.mousePosition);
+            _lastInputPos = input.Position;
+            var spritePos = GetSpritePos(input.Position);
+            if(IsSpritePosOnSprite(spritePos)) _painting = true;
         }
-        if (input.Ended) CheckCompleteFactor();
+        if (_painting && input.Moved)
+        {
+            _lastPaintTime = Time.time;
+            
+            // Lerp extra brushes to mask between stroke frames, if spacing too high
+            var dist = Vector2.Distance(_lastInputPos, input.Position);
+            if (dist > BrushMaxSpacing)
+            {
+                var numSteps = Mathf.FloorToInt(dist / BrushMaxSpacing);
+                for (var i = 0; i < numSteps; i++)
+                {
+                    var pos = Vector2.Lerp(_lastInputPos, input.Position, i/(float)numSteps);
+                    if (UseBrush) PaintBrush(pos, false);
+                    else Paint(pos, false);
+                }
+            }
+            
+            if (UseBrush) PaintBrush(input.Position, true);
+            else Paint(input.Position, true);
+            _lastInputPos = input.Position;
+        }
+
+        if (input.Ended)
+        {
+            _painting = false;
+            CheckCompleteFactor();
+        }
     }
     
     public void ResetTexture()
@@ -101,36 +129,44 @@ public class TexturePainter : MonoBehaviour
         SpriteMaterial.SetTexture(Mask, PaintMask);
     }
     
-    private void Paint(Vector2 pos)
+    private void Paint(Vector2 pos, bool updateTexture)
     {
         var spritePos = GetSpritePos(pos);
-        //Debug.Log("spritePos = " + spritePos);
-        if(IsSpritePosOnSprite(spritePos)) {
-                //Debug.Log("painting at " + spritePos);
-                var brushPos = spritePos;
-                brushPos.x *= PaintMask.width;
-                brushPos.y *= PaintMask.height;
-                var min = brushPos - Vector2.one * BrushSize / 2;
-                var max = brushPos + Vector2.one * BrushSize / 2;
-                var minX = Mathf.FloorToInt(Mathf.Clamp(min.x, 0, PaintMask.width));
-                var maxX = Mathf.FloorToInt(Mathf.Clamp(max.x, 0, PaintMask.width));
-                var minY = Mathf.FloorToInt(Mathf.Clamp(min.y, 0, PaintMask.height));
-                var maxY = Mathf.FloorToInt(Mathf.Clamp(max.y, 0, PaintMask.height));
         
-                for (var i = minX; i < maxX; i++)
+        if (IsSpritePosOnSprite(spritePos)) 
+        {
+            var brushPos = spritePos;
+            brushPos.x *= PaintMask.width;
+            brushPos.y *= PaintMask.height;
+            var min = brushPos - Vector2.one * BrushSize / 2;
+            var max = brushPos + Vector2.one * BrushSize / 2;
+            var minX = Mathf.FloorToInt(Mathf.Clamp(min.x, 0, PaintMask.width));
+            var maxX = Mathf.FloorToInt(Mathf.Clamp(max.x, 0, PaintMask.width));
+            var minY = Mathf.FloorToInt(Mathf.Clamp(min.y, 0, PaintMask.height));
+            var maxY = Mathf.FloorToInt(Mathf.Clamp(max.y, 0, PaintMask.height));
+
+            var xCenter = (maxX - minX) / 2f;
+            var yCenter = (maxY - minY) / 2f;
+            for (var i = minX; i < maxX; i++)
+            {
+                for (var j = minY; j < maxY; j++)
                 {
-                    for (var j = minY; j < maxY; j++)
-                    {
-                        var idx = j * PaintMask.width + i;
-                        var pixel = _maskPixels[idx];
-                        var pixelByte = Math.Clamp(pixel + 255, 0, 255);
-                        _maskPixels[idx] = (byte)pixelByte;
-                    }
+                    var centerDist = (Mathf.Abs((i - minX) - xCenter) + Mathf.Abs((j - minY) - yCenter))/(BrushSize*2);
+                    var value = 1-centerDist;
+                    
+                    var idx = j * PaintMask.width + i;
+                    var pixel = _maskPixels[idx];
+                    var pixelByte = Math.Clamp(pixel + value*255, 0, 255);
+                    _maskPixels[idx] = (byte)pixelByte;
                 }
-                
+            }
+
+            if (updateTexture)
+            {
                 PaintMask.SetPixelData(_maskPixels,0);
                 PaintMask.Apply();
                 SpriteMaterial.SetTexture(Mask, PaintMask);
+            }
         }
     }
 
@@ -141,10 +177,7 @@ public class TexturePainter : MonoBehaviour
         {
             factor += maskPixel / 256f;
         }
-
         factor /= _maskPixels.Length;
-
-        DebugCompleteFactor = factor;
         
         if (factor > .6f)
         {
@@ -152,7 +185,7 @@ public class TexturePainter : MonoBehaviour
         }
     }
     
-    private void PaintBrush(Vector2 pos)
+    private void PaintBrush(Vector2 pos, bool updateTexture)
     {
         var spritePos = GetSpritePos(pos);
         //Debug.Log("spritePos = " + spritePos);
@@ -174,14 +207,20 @@ public class TexturePainter : MonoBehaviour
                     
                     var idx = j * Brush.width + i;
                     var spriteIdx = (j+startY) * PaintMask.width + i+startX;
+
+                    if (idx >= _brushPixels.Length || spriteIdx >= _maskPixels.Length) break;  // TODO this shouldn't be necessary
+                    
                     var pixel = _maskPixels[spriteIdx];
                     _maskPixels[spriteIdx] = (byte)Math.Clamp(pixel+_brushPixels[idx], 0, 255);
                 }
             }
-                
-            PaintMask.SetPixelData(_maskPixels,0);
-            PaintMask.Apply();
-            SpriteMaterial.SetTexture(Mask, PaintMask);
+
+            if (updateTexture)
+            {
+                PaintMask.SetPixelData(_maskPixels,0);
+                PaintMask.Apply();
+                SpriteMaterial.SetTexture(Mask, PaintMask);
+            }
         }
     }
     
