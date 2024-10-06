@@ -74,6 +74,8 @@ public class TexturePainter : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R)) ResetTexture();
         #endif
         
+        
+        //BIG TODO move this to shader - i.e. even brush texture is a texture in the material, not here
         var input = Utility.GetInput();
         if (input.Began)
         {
@@ -86,7 +88,7 @@ public class TexturePainter : MonoBehaviour
             _lastPaintTime = Time.time;
             
             // Lerp extra brushes to mask between stroke frames, if spacing too high
-            var dist = Vector2.Distance(_lastInputPos, input.Position);
+            /*var dist = Vector2.Distance(_lastInputPos, input.Position);
             if (dist > BrushMaxSpacing)
             {
                 var numSteps = Mathf.FloorToInt(dist / BrushMaxSpacing);
@@ -96,7 +98,7 @@ public class TexturePainter : MonoBehaviour
                     if (UseBrush) PaintBrush(pos, false);
                     else Paint(pos, false);
                 }
-            }
+            }*/
             
             if (UseBrush) PaintBrush(input.Position, true);
             else Paint(input.Position, true);
@@ -155,8 +157,8 @@ public class TexturePainter : MonoBehaviour
                     var jDist = yCenter - (j - minY);
                     var centerDist = iDist*iDist+jDist*jDist + (BrushSize*BrushSize*.8f);
                     centerDist = Mathf.Clamp01(centerDist / (BrushSize*BrushSize));
-                    //centerDist = Mathf.FloorToInt(centerDist);
-                    centerDist = centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist;
+                    centerDist = Mathf.FloorToInt(centerDist);
+                    //centerDist = centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist;
                     var value = 1-centerDist;
                     
                     var idx = j * PaintMask.width + i;
@@ -193,9 +195,8 @@ public class TexturePainter : MonoBehaviour
     private void PaintBrush(Vector2 pos, bool updateTexture)
     {
         var spritePos = GetSpritePos(pos);
-        //Debug.Log("spritePos = " + spritePos);
-        if(IsSpritePosOnSprite(spritePos)) {
-            //Debug.Log("painting at " + spritePos);
+        if (IsSpritePosOnSprite(spritePos)) 
+        {
             var brushPos = spritePos;
             brushPos.x *= PaintMask.width;
             brushPos.y *= PaintMask.height;

@@ -79,7 +79,7 @@ public class LevelRunner : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
         // INTRO
-        //yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
+        yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
         
         // PHASE 1
         yield return RunPaintingPhase(0, MonologueNodeName.PaintingComplete1);

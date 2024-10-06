@@ -3531,8 +3531,8 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 8215ba29a9e906f45aaf3a070e4d09f0, type: 3}
   BrushMaxSpacing: 20
   UseBrush: 0
-  BrushSize: 100
-  Brush: {fileID: 2800000, guid: 2913b686d077fbc46910168bf7690c79, type: 3}
+  BrushSize: 200
+  Brush: {fileID: 2800000, guid: 5630ed3e7098b09459a0fc7a54f370f6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

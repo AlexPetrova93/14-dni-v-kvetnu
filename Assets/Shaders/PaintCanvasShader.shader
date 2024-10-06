@@ -4,6 +4,7 @@ Shader "Sprites/PaintCanvasShader"
     {
         [PerRendererData] _MainTex ("Sprite Texture", 2D) = "white" {}
         _Color ("Tint", Color) = (1,1,1,1)
+        _BrushPosition ("Brush Position", Vector) = (0,0,0,0)
         _SecondTex ("Second Texture", 2D) = "white" {}
         _SecondColor ("Second Tint", Color) = (1,1,1,1)
         _Mask ("Mask", 2D) = "white" {}
@@ -114,6 +115,7 @@ Shader "Sprites/PaintCanvasShader"
         sampler2D _Mask;
         sampler2D _AlphaTex;
         fixed _SecondFactor;
+        fixed4 _BrushPosition;
 
         fixed4 SampleSpriteTexture (float2 uv)
         {

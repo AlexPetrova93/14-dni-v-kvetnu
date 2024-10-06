@@ -36,7 +36,31 @@ public class MonologueManager : MonoBehaviour
         foreach (var line in linesArr)
         {
             Text.text = line;
-            yield return Utility.WaitUntilEvent(Next.onClick);  // TODO wait for click
+
+            var clicking = false;
+            var beginTime = 0f;
+            while (true)
+            {
+                var input = Utility.GetInput();
+                if (input.Began)
+                {
+                    beginTime = Time.time;
+                    clicking = RectTransformUtility.RectangleContainsScreenPoint((RectTransform)transform, input.Position);
+                }
+                // check if clicking outside panel
+                if (input.Ended)
+                {
+                    if (clicking && Time.time - beginTime < .2f &&
+                        RectTransformUtility.RectangleContainsScreenPoint((RectTransform)transform, input.Position))
+                    {
+                        break;
+                    }
+                }
+
+                yield return null;
+            }
+            
+            //yield return Utility.WaitUntilEvent(Next.onClick);  // TODO wait for click
         }
         Text.text = "";
         CanvasGroup.Hide();
