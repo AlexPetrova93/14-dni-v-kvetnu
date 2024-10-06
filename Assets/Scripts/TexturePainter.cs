@@ -147,11 +147,16 @@ public class TexturePainter : MonoBehaviour
 
             var xCenter = (maxX - minX) / 2f;
             var yCenter = (maxY - minY) / 2f;
-            for (var i = minX; i < maxX; i++)
+            for (var i = minX; i < maxX; i++) // TODO this should ideally happen in the shader - bc parallelization! - not sure how that'll work with lerp though
             {
                 for (var j = minY; j < maxY; j++)
                 {
-                    var centerDist = (Mathf.Abs((i - minX) - xCenter) + Mathf.Abs((j - minY) - yCenter))/(BrushSize*2);
+                    var iDist = xCenter - (i - minX);
+                    var jDist = yCenter - (j - minY);
+                    var centerDist = iDist*iDist+jDist*jDist + (BrushSize*BrushSize*.8f);
+                    centerDist = Mathf.Clamp01(centerDist / (BrushSize*BrushSize));
+                    //centerDist = Mathf.FloorToInt(centerDist);
+                    centerDist = centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist;
                     var value = 1-centerDist;
                     
                     var idx = j * PaintMask.width + i;
