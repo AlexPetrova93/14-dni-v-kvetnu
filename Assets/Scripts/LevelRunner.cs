@@ -16,7 +16,7 @@ public class LevelRunner : MonoBehaviour
     public CanvasGroup Fader;
     
     public Transform DoorLeft;
-    public Transform DoorRight;
+    public DraggableDoor DoorRight;
     
     private float _doorLeftClosedX;
     private float _doorRightClosedX;
@@ -57,11 +57,12 @@ public class LevelRunner : MonoBehaviour
     private void Start()
     {
         _doorLeftClosedX = DoorLeft.position.x;
-        _doorRightClosedX = DoorRight.position.x;
+        _doorRightClosedX = DoorRight.transform.position.x;
         MonologueManager.Init();
         TexturePainter.Init(Camera);
         MapViewer.Init(MonologueManager, Camera);
-        
+
+        DoorRight.Init(Camera);
         Fader.alpha = 1;
         IntroScreen.alpha = 1;
         
@@ -121,6 +122,12 @@ public class LevelRunner : MonoBehaviour
         
         // TODO activate door handle drag
         
+        DoorRight.Activate();
+
+        yield return Utility.WaitUntilEvent(DoorRight.OnDoorOpen);
+        DoorRight.Deactivate();
+        DoorRight.OpenFully();
+        
         // TODO wait for door drag
         
         TexturePainter.PauseGame();
@@ -142,14 +149,14 @@ public class LevelRunner : MonoBehaviour
     private IEnumerator OpenDoor(float animTime = .5f)
     {
         DoorLeft.DOMoveX(DoorLeftOpenX, animTime);
-        DoorRight.DOMoveX(DoorRightOpenX, animTime);
+        DoorRight.transform.DOMoveX(DoorRightOpenX, animTime);
         yield return new WaitForSeconds(animTime);
     }
 
     private IEnumerator CloseDoor(float animTime = .5f)
     {
         DoorLeft.DOMoveX(_doorLeftClosedX, animTime);
-        DoorRight.DOMoveX(_doorRightClosedX, animTime);
+        DoorRight.transform.DOMoveX(_doorRightClosedX, animTime);
         yield return new WaitForSeconds(animTime);
     }
 }
