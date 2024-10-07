@@ -31,7 +31,7 @@ public static class Utility
         {
             var input = GetInput();
             if (input.Began) inputTime = Time.time;
-            if (input.Ended && Time.time - inputTime < .2f) clicked = true;
+            if (input.Ended && Time.time - inputTime < .5f) clicked = true;
 
             yield return null;
         }

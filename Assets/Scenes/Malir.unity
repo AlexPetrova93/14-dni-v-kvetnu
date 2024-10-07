@@ -1288,6 +1288,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760d430e09c28a942910954aaebf9aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PaintingRenderTexture: {fileID: 0}
+  RenderTextureMaterial: {fileID: 0}
   SpriteMaterial: {fileID: 2100000, guid: 5c4585426c610c84dafae00be397307f, type: 2}
   PaintMask: {fileID: 2800000, guid: 7d9818672b37f084fb65e3503b6fcdce, type: 3}
   PhaseTextures: []
@@ -3522,6 +3524,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 760d430e09c28a942910954aaebf9aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PaintingRenderTexture: {fileID: 8600000, guid: 5a248fc09456de84dbeb1f11c04c8e17, type: 2}
+  RenderTextureMaterial: {fileID: 2100000, guid: 79e2d791000bdee4e9ef1c559085b1de, type: 2}
   SpriteMaterial: {fileID: 2100000, guid: 5c4585426c610c84dafae00be397307f, type: 2}
   PaintMask: {fileID: 2800000, guid: 7d9818672b37f084fb65e3503b6fcdce, type: 3}
   PhaseTextures:
@@ -3531,7 +3535,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 8215ba29a9e906f45aaf3a070e4d09f0, type: 3}
   BrushMaxSpacing: 20
   UseBrush: 0
-  BrushSize: 200
+  BrushSize: 50
   Brush: {fileID: 2800000, guid: 5630ed3e7098b09459a0fc7a54f370f6, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

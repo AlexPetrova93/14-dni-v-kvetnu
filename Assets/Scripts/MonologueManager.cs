@@ -50,7 +50,7 @@ public class MonologueManager : MonoBehaviour
                 // check if clicking outside panel
                 if (input.Ended)
                 {
-                    if (clicking && Time.time - beginTime < .2f &&
+                    if (clicking && Time.time - beginTime < .5f &&
                         RectTransformUtility.RectangleContainsScreenPoint((RectTransform)transform, input.Position))
                     {
                         break;

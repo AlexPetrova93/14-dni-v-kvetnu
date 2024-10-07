@@ -133,7 +133,7 @@ Shader "Sprites/PaintCanvasShader"
         {
             fixed4 c = tex2D (_MainTex, IN.texcoord) * IN.color;
             fixed4 sc = tex2D (_SecondTex, IN.texcoord);
-            fixed fc = tex2D (_Mask, IN.texcoord).a;
+            fixed fc = saturate(tex2D (_Mask, IN.texcoord).r);
             fixed4 final = lerp(c, sc, fc);
             final.rgb *= final.a;
             return final;
