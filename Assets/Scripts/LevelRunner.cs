@@ -128,7 +128,6 @@ public class LevelRunner : MonoBehaviour
         DoorRight.Deactivate();
         DoorRight.OpenFully();
         
-        // TODO wait for door drag
         
         TexturePainter.PauseGame();
         yield return OpenDoor(); 

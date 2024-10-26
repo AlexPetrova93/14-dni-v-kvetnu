@@ -62,7 +62,6 @@ public class TexturePainter : MonoBehaviour
             filterMode = FilterMode.Bilinear,
         };
         ResetTexture();
-        //SpriteMaterial.SetTexture(MaskParam, PaintMask);
         SpriteMaterial.SetTexture(SecondTexParam, PhaseTextures[phaseIndex%PhaseTextures.Length]);
         _gameOn = true;
     }
@@ -70,8 +69,6 @@ public class TexturePainter : MonoBehaviour
     public void PauseGame() => _gameOn = false;
     
     public void ResumeGame() => _gameOn = true;
-
-    private float _lastPaintTime;
     
     private void Update()
     {
@@ -88,8 +85,6 @@ public class TexturePainter : MonoBehaviour
         }
         if (_painting && input.Moved)
         {
-            _lastPaintTime = Time.time;
-            
             // Lerp extra brushes to mask between stroke frames, if spacing too high
             var dist = Vector2.Distance(_lastInputPos, input.Position);
             if (dist > BrushMaxSpacing)
@@ -133,7 +128,6 @@ public class TexturePainter : MonoBehaviour
         PaintMask.Apply();
         PaintingRenderTexture.initializationTexture = PaintMask;
         PaintingRenderTexture.Initialize();
-        //SpriteMaterial.SetTexture(MaskParam, PaintMask);
     }
 
     private float _lastSize;
@@ -155,51 +149,6 @@ public class TexturePainter : MonoBehaviour
         _brushInfo.w = lerpedSize;
         RenderTextureMaterial.SetVector(BrushInfoParam, _brushInfo);
         PaintingRenderTexture.Update();
-
-        //_lastSpritePos = spritePos;
-        
-        return;
-        
-        if (IsSpritePosOnSprite(spritePos)) 
-        {
-            var brushPos = spritePos;
-            brushPos.x *= PaintMask.width;
-            brushPos.y *= PaintMask.height;
-            var min = brushPos - Vector2.one * BrushSize / 2;
-            var max = brushPos + Vector2.one * BrushSize / 2;
-            var minX = Mathf.FloorToInt(Mathf.Clamp(min.x, 0, PaintMask.width));
-            var maxX = Mathf.FloorToInt(Mathf.Clamp(max.x, 0, PaintMask.width));
-            var minY = Mathf.FloorToInt(Mathf.Clamp(min.y, 0, PaintMask.height));
-            var maxY = Mathf.FloorToInt(Mathf.Clamp(max.y, 0, PaintMask.height));
-
-            var xCenter = (maxX - minX) / 2f;
-            var yCenter = (maxY - minY) / 2f;
-            for (var i = minX; i < maxX; i++) // TODO this should ideally happen in the shader - bc parallelization! - not sure how that'll work with lerp though
-            {
-                for (var j = minY; j < maxY; j++)
-                {
-                    var iDist = xCenter - (i - minX);
-                    var jDist = yCenter - (j - minY);
-                    var centerDist = iDist*iDist+jDist*jDist + (BrushSize*BrushSize*.8f);
-                    centerDist = Mathf.Clamp01(centerDist / (BrushSize*BrushSize));
-                    centerDist = Mathf.FloorToInt(centerDist);
-                    //centerDist = centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist*centerDist;
-                    var value = 1-centerDist;
-                    
-                    var idx = j * PaintMask.width + i;
-                    var pixel = _maskPixels[idx];
-                    var pixelByte = Math.Clamp(pixel + value*255, 0, 255);
-                    _maskPixels[idx] = (byte)pixelByte;
-                }
-            }
-
-            /*if (updateTexture)
-            {
-                PaintMask.SetPixelData(_maskPixels,0);
-                PaintMask.Apply();
-                //SpriteMaterial.SetTexture(MaskParam, PaintMask);
-            }*/
-        }
     }
 
     private void CheckCompleteFactor()
@@ -265,7 +214,6 @@ public class TexturePainter : MonoBehaviour
             {
                 PaintMask.SetPixelData(_maskPixels,0);
                 PaintMask.Apply();
-                //SpriteMaterial.SetTexture(MaskParam, PaintMask);
             }
         }
     }
@@ -283,14 +231,5 @@ public class TexturePainter : MonoBehaviour
     private bool IsSpritePosOnSprite(Vector2 pos)
     {
         return pos.x >= 0 && pos.y >= 0 && pos.x <= 1 && pos.y <= 1;
-    }
-    
-    public static Vector3[] GetSpriteCorners(SpriteRenderer renderer)
-    {
-        Vector3 topRight = renderer.transform.TransformPoint(renderer.sprite.bounds.max);
-        Vector3 topLeft = renderer.transform.TransformPoint(new Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.min.y, 0));
-        Vector3 botLeft = renderer.transform.TransformPoint(renderer.sprite.bounds.min);
-        Vector3 botRight = renderer.transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
-        return new Vector3[] { topRight, topLeft, botLeft, botRight };
     }
 }

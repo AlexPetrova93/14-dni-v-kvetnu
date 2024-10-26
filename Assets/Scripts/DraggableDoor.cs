@@ -14,6 +14,7 @@ public class DraggableDoor : MonoBehaviour
     private float _lastPositionX;
     private float _defaultPositionX;
     private float _openPositionX;
+    private float _halfOpenPosition;
     
     private bool _active;
     private bool _dragging;
@@ -23,6 +24,7 @@ public class DraggableDoor : MonoBehaviour
         _camera = cam;
         _defaultPositionX = transform.position.x;
         _openPositionX = _defaultPositionX + 3.5f;
+        _halfOpenPosition = _defaultPositionX + 1.5f;
         DoorHandle.DOFade(0, 0);
     }
 
@@ -36,8 +38,6 @@ public class DraggableDoor : MonoBehaviour
         {
             var worldPos = _camera.ScreenToWorldPoint( input.Position );
             worldPos.z = 0;
-            Debug.Log("worldPos = " + worldPos);
-            Debug.Log("DoorHandle.bounds = " + DoorHandle.bounds);
             if (DoorHandle.bounds.Contains(worldPos))
             {
                 _inputBeginPos = worldPos;
@@ -54,6 +54,9 @@ public class DraggableDoor : MonoBehaviour
             var pos = transform.position;
             pos.x = _lastPositionX + worldPos.x - _inputBeginPos.x;
             pos.x = Mathf.Clamp(pos.x, _defaultPositionX, _openPositionX);
+            
+            if (pos.x > _halfOpenPosition) OnDoorOpen.Invoke();
+            
             transform.position = pos;
         }
 
@@ -61,7 +64,6 @@ public class DraggableDoor : MonoBehaviour
         {
             _dragging = false;
         }
-
     }
 
     public void OpenFully()
