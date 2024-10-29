@@ -162,4 +162,28 @@ public class MapViewer : MonoBehaviour
         _acceptInput = false;
         _canRunElementsMonologue = false;
     }
+
+    [ContextMenu("Set Up")]
+    public void SetUp()
+    {
+        // 1, 10, 19, 28
+        for (var i = 0; i < Phases.Length; i++)
+        {
+            var phase = Phases[i];
+            var j = 0;
+            foreach (Transform tr in phase.transform)
+            {
+                if (!tr.TryGetComponent<BoxCollider2D>(out var col))
+                {
+                    tr.gameObject.AddComponent<BoxCollider2D>();
+                }
+                if (!tr.TryGetComponent<ClickableMapElement>(out var el))
+                {
+                    el = tr.gameObject.AddComponent<ClickableMapElement>();
+                }
+                el.MonologueNodeName = (MonologueNodeName)(1 + i*9 + j);
+                ++j;
+            }
+        }
+    }
 }
