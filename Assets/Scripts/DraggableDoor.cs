@@ -25,7 +25,6 @@ public class DraggableDoor : MonoBehaviour
         _defaultPositionX = transform.position.x;
         _openPositionX = _defaultPositionX + 3.5f;
         _halfOpenPosition = _defaultPositionX + 1.5f;
-        DoorHandle.DOFade(0, 0);
     }
 
     private void Update()
@@ -74,13 +73,19 @@ public class DraggableDoor : MonoBehaviour
     
     public void Activate()
     {
-        DoorHandle.DOFade(.5f, .2f);
+        /*var rot = 0f;
+        DOTween.Shake(() => rot * Vector3.one, value => rot = value.x, 1, 30).OnUpdate(() =>
+        {
+            DoorHandle.transform.localRotation = Quaternion.Euler(0,0,rot);
+        });*/
+        DoorHandle.transform.DOShakeRotation(1, 30);
+        //DoorHandle.DOFade(.5f, .2f);
         _active = true;
     }
 
     public void Deactivate()
     {
-        DoorHandle.DOFade(0, .2f);
+        //DoorHandle.DOFade(0, .2f);
         _active = false;
     }
 }

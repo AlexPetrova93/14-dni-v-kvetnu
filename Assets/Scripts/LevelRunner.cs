@@ -80,21 +80,25 @@ public class LevelRunner : MonoBehaviour
         yield return new WaitForSeconds(.5f);
 
         // INTRO
-        yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
+        //yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
         
         // PHASE 1
-        yield return RunPaintingPhase(0, MonologueNodeName.PaintingComplete1);
         yield return RunMapPhase(0, MonologueNodeName.MapIntro1);
+        yield return RunPaintingPhase(0, MonologueNodeName.PaintingComplete1);
+        yield return WaitForDoorDrag(1);
         
         // PHASE 2
-        yield return RunPaintingPhase(1, MonologueNodeName.PaintingComplete2);
         yield return RunMapPhase(1, MonologueNodeName.MapIntro2);
+        yield return RunPaintingPhase(1, MonologueNodeName.PaintingComplete2);
+        yield return WaitForDoorDrag(2);
         
         // PHASE 3
-        yield return RunPaintingPhase(2, MonologueNodeName.PaintingComplete3);
         yield return RunMapPhase(2, MonologueNodeName.MapIntro3);
+        yield return RunPaintingPhase(2, MonologueNodeName.PaintingComplete3);
+        yield return WaitForDoorDrag(3);
         
         // FINAL PAINTING
+        yield return RunMapPhase(3, MonologueNodeName.MapIntro4);
         yield return RunPaintingPhase(3, MonologueNodeName.PaintingComplete4);
         TexturePainter.PauseGame();
         
@@ -103,32 +107,11 @@ public class LevelRunner : MonoBehaviour
         
         yield return RestartLevelRoutine();
     }
-
-    private IEnumerator RunPaintingPhase(int phaseIndex, MonologueNodeName paintingDoneNode)
-    {
-        // start painting
-        TexturePainter.StartGame(phaseIndex);
-
-        // wait until most is painted
-        yield return Utility.WaitUntilEvent(TexturePainter.OnPaintingComplete);
-        
-        // run dialogue, which will signify you can open the door in first 3 phases
-        yield return MonologueManager.RunMonologue(paintingDoneNode);
-    }
     
     private IEnumerator RunMapPhase(int phaseIndex, MonologueNodeName mapIntroNode)
     {
-        MapViewer.StartPhase(phaseIndex); // start next phase before activating door handle
-        
-        // TODO activate door handle drag
-        
-        DoorRight.Activate();
-
-        yield return Utility.WaitUntilEvent(DoorRight.OnDoorOpen);
-        DoorRight.Deactivate();
         DoorRight.OpenFully();
-        
-        
+
         TexturePainter.PauseGame();
         yield return OpenDoor(); 
             
@@ -144,6 +127,30 @@ public class LevelRunner : MonoBehaviour
         TexturePainter.ResetTexture();
         yield return CloseDoor();
     }
+
+    private IEnumerator RunPaintingPhase(int phaseIndex, MonologueNodeName paintingDoneNode)
+    {
+        // start painting
+        TexturePainter.StartGame(phaseIndex);
+
+        // wait until most is painted
+        yield return Utility.WaitUntilEvent(TexturePainter.OnPaintingComplete);
+        
+        // run dialogue, which will signify you can open the door in first 3 phases
+        yield return MonologueManager.RunMonologue(paintingDoneNode);
+    }
+    
+    private IEnumerator WaitForDoorDrag(int phaseIndex)
+    {
+        MapViewer.StartPhase(phaseIndex); // start next phase before activating door handle
+        
+        // activate door handle drag
+        DoorRight.Activate();
+
+        yield return Utility.WaitUntilEvent(DoorRight.OnDoorOpen);
+        DoorRight.Deactivate();
+    }
+
 
     private IEnumerator OpenDoor(float animTime = .5f)
     {
