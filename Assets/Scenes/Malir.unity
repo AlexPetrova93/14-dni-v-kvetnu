@@ -4424,6 +4424,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc22ba057e2e8d41952fa4442f9c150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MusicItems:
+  - AudioRef: 0
+    AudioClip: {fileID: 8300000, guid: a47fb82818b8a2047bdc1db65a5f6446, type: 3}
+  - AudioRef: 1
+    AudioClip: {fileID: 8300000, guid: f36ba5ffcb68fac42969da1f39646ace, type: 3}
+  SfxItems:
+  - AudioRef: 2
+    AudioClip: {fileID: 8300000, guid: 4bbf791f93476e847bff13a392fb98dc, type: 3}
+  - AudioRef: 3
+    AudioClip: {fileID: 8300000, guid: a7fca4bf4ad3cb543b3bdc4c1d9ba26a, type: 3}
+  - AudioRef: 4
+    AudioClip: {fileID: 8300000, guid: e2a654bcd7c11054a8d8ba5bfc8ec3e0, type: 3}
 --- !u!4 &1087031706
 Transform:
   m_ObjectHideFlags: 0
@@ -6650,6 +6662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec4b7e3070b15684d829555ba60ce616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SoundManager: {fileID: 1087031705}
   MonologueManager: {fileID: 555232193}
   TexturePainter: {fileID: 2130073769}
   MapViewer: {fileID: 463884627}
@@ -6790,10 +6803,10 @@ SceneRoots:
   m_Roots:
   - {fileID: 519420032}
   - {fileID: 798629893}
+  - {fileID: 1087031706}
   - {fileID: 2118502973}
   - {fileID: 463884628}
   - {fileID: 2077270467}
   - {fileID: 1243207620}
   - {fileID: 272196256}
   - {fileID: 1724557646}
-  - {fileID: 1087031706}

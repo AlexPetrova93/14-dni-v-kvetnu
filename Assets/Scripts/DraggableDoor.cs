@@ -4,6 +4,7 @@ using UnityEngine.Events;
 
 public class DraggableDoor : MonoBehaviour
 {
+    private SoundManager _soundManager;
     private Camera _camera;
     public SpriteRenderer DoorHandle;
 
@@ -19,8 +20,9 @@ public class DraggableDoor : MonoBehaviour
     private bool _active;
     private bool _dragging;
 
-    public void Init(Camera cam)
+    public void Init(SoundManager soundManager, Camera cam)
     {
+        _soundManager = soundManager;
         _camera = cam;
         _defaultPositionX = transform.position.x;
         _openPositionX = _defaultPositionX + 3.5f;
@@ -42,6 +44,7 @@ public class DraggableDoor : MonoBehaviour
                 _inputBeginPos = worldPos;
                 _lastPositionX = transform.position.x;
                 _dragging = true;
+                _soundManager.PlaySound(AudioRef.Door);
             }
         }
 

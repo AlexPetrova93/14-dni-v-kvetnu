@@ -16,7 +16,7 @@ public static class MonologueContainer
     public static Dictionary<MonologueNodeName, string> Monologues = new Dictionary<MonologueNodeName, string>()
     {
         // ----------------------------------------------------------------------------------------------------
-        
+        // POZOR intro tam ted nikde neni !!!
         { MonologueNodeName.Intro, 
             "Bydlim na tomhle ostrove od jakziva.\n" +
             "Neni tu moc co delat, takze vetsinu casu travim malbou." },

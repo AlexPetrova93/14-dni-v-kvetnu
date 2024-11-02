@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelRunner : MonoBehaviour
 {
+    public SoundManager SoundManager;
     public MonologueManager MonologueManager;
     public TexturePainter TexturePainter;
     public MapViewer MapViewer;
@@ -58,11 +59,12 @@ public class LevelRunner : MonoBehaviour
     {
         _doorLeftClosedX = DoorLeft.position.x;
         _doorRightClosedX = DoorRight.transform.position.x;
+        SoundManager.Init();
         MonologueManager.Init();
         TexturePainter.Init(Camera);
-        MapViewer.Init(MonologueManager, Camera);
+        MapViewer.Init(SoundManager, MonologueManager, Camera);
 
-        DoorRight.Init(Camera);
+        DoorRight.Init(SoundManager, Camera);
         Fader.alpha = 1;
         IntroScreen.alpha = 1;
         
@@ -72,6 +74,7 @@ public class LevelRunner : MonoBehaviour
     // Level runner
     private IEnumerator RunLevel()
     {
+        SoundManager.PlayMusic(AudioRef.Music);
         Fader.Hide(.5f);
         yield return new WaitForSeconds(.5f);
         yield return Utility.WaitForClick();
@@ -110,7 +113,9 @@ public class LevelRunner : MonoBehaviour
     
     private IEnumerator RunMapPhase(int phaseIndex, MonologueNodeName mapIntroNode)
     {
+        SoundManager.DoPlayMusic(AudioRef.Ambient, 1f);
         DoorRight.OpenFully();
+        SoundManager.PlaySound(AudioRef.Door);
 
         TexturePainter.PauseGame();
         yield return OpenDoor(); 
@@ -125,6 +130,7 @@ public class LevelRunner : MonoBehaviour
         
         MapViewer.Deactivate(.5f);
         TexturePainter.ResetTexture();
+        SoundManager.DoPauseMusic(AudioRef.Ambient, 1f);
         yield return CloseDoor();
     }
 
@@ -135,6 +141,8 @@ public class LevelRunner : MonoBehaviour
 
         // wait until most is painted
         yield return Utility.WaitUntilEvent(TexturePainter.OnPaintingComplete);
+        
+        SoundManager.PlaySound(AudioRef.Chime);
         
         // run dialogue, which will signify you can open the door in first 3 phases
         yield return MonologueManager.RunMonologue(paintingDoneNode);

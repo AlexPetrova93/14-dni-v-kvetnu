@@ -18,6 +18,7 @@ public class MapViewer : MonoBehaviour
 
     // PRIVATE
 
+    private SoundManager _soundManager;
     private MonologueManager _monologueManager;
     private Camera _cam;
 
@@ -36,8 +37,9 @@ public class MapViewer : MonoBehaviour
     private bool _acceptInput;
     private bool _canRunElementsMonologue;
 
-    public void Init(MonologueManager monologueManager, Camera cam)
+    public void Init(SoundManager soundManager, MonologueManager monologueManager, Camera cam)
     {
+        _soundManager = soundManager;
         _monologueManager = monologueManager;
         _cam = cam;
         _mapDefaultPos = transform.position;
@@ -87,6 +89,7 @@ public class MapViewer : MonoBehaviour
                     var element = GetClickableElement(worldPos);
                     if (_clickedElement == element)
                     {
+                        _soundManager.PlaySound(AudioRef.Click);
                         clickedOnElement = true;
                         nodeName = element.MonologueNodeName;
                     }
