@@ -856,6 +856,7 @@ GameObject:
   - component: {fileID: 321518371}
   - component: {fileID: 321518370}
   - component: {fileID: 321518369}
+  - component: {fileID: 321518372}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -988,6 +989,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &321518372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321518367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 321518371}
+  HalfRange: 4
+  WaveStrength: 0.1
+  WaveFrequency: 2
+  MoveSpeed: 1
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &365518655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1019,7 @@ GameObject:
   - component: {fileID: 365518657}
   - component: {fileID: 365518659}
   - component: {fileID: 365518658}
+  - component: {fileID: 365518660}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -1132,6 +1152,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.77, y: 5.06}
   m_EdgeRadius: 0
+--- !u!114 &365518660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365518655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 365518657}
+  HalfRange: 3
+  WaveStrength: 0.05
+  WaveFrequency: 0.5
+  MoveSpeed: -0.5
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &441901904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1776,6 +1814,7 @@ GameObject:
   - component: {fileID: 591693152}
   - component: {fileID: 591693151}
   - component: {fileID: 591693150}
+  - component: {fileID: 591693153}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -1908,6 +1947,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &591693153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591693148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 591693152}
+  HalfRange: 3
+  WaveStrength: 0.08
+  WaveFrequency: 0.4
+  MoveSpeed: 0.2
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &609929778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2004,6 +2061,7 @@ GameObject:
   - component: {fileID: 642530520}
   - component: {fileID: 642530519}
   - component: {fileID: 642530518}
+  - component: {fileID: 642530521}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -2136,6 +2194,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &642530521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642530516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 642530520}
+  HalfRange: 2
+  WaveStrength: 0.09
+  WaveFrequency: 1
+  MoveSpeed: -0.3
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &664121982
 GameObject:
   m_ObjectHideFlags: 0
@@ -6314,6 +6390,7 @@ GameObject:
   - component: {fileID: 2041138160}
   - component: {fileID: 2041138159}
   - component: {fileID: 2041138158}
+  - component: {fileID: 2041138161}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -6446,6 +6523,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2041138161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041138156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 2041138160}
+  HalfRange: 5
+  WaveStrength: 0.1
+  WaveFrequency: 3.5
+  MoveSpeed: 1.5
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &2060332158
 GameObject:
   m_ObjectHideFlags: 0
@@ -6458,6 +6553,7 @@ GameObject:
   - component: {fileID: 2060332160}
   - component: {fileID: 2060332162}
   - component: {fileID: 2060332161}
+  - component: {fileID: 2060332163}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -6590,6 +6686,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.28, y: 1.53}
   m_EdgeRadius: 0
+--- !u!114 &2060332163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060332158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 2060332160}
+  HalfRange: 4
+  WaveStrength: 0.04
+  WaveFrequency: 1
+  MoveSpeed: -1
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &2077270465
 GameObject:
   m_ObjectHideFlags: 0
