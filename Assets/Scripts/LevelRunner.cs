@@ -77,31 +77,48 @@ public class LevelRunner : MonoBehaviour
         SoundManager.PlayMusic(AudioRef.Music);
         Fader.Hide(.5f);
         yield return new WaitForSeconds(.5f);
+        
+        // set up
+        var transform1 = DoorLeft.transform;
+        var pos = transform1.position;
+        pos.x = DoorLeftOpenX;
+        transform1.position = pos;
+        DoorRight.OpenFully(0);
+        TexturePainter.ResetTexture(); // make sure the canvas is blank at the beginning
+        
         yield return Utility.WaitForClick();
         IntroScreen.Hide(1f);
-        TexturePainter.ResetTexture(); // make sure the canvas is blank at the beginning
-        yield return new WaitForSeconds(.5f);
+        SoundManager.DoPlayMusic(AudioRef.Ambient, 1f);
+        yield return new WaitForSeconds(1f);
 
-        // INTRO
-        //yield return MonologueManager.RunMonologue(MonologueNodeName.Intro);
+        MapViewer.Activate(); // allow map input
+
+        yield return MonologueManager.RunMonologue(MonologueNodeName.MapIntro1);
+        MapViewer.ActivateElementsMonologue(); // allow monologue after click on element
+        
+        yield return Utility.WaitUntilEvent(MapViewer.OnRequiredElementFound);
+        
+        MapViewer.Deactivate(.5f);
+        SoundManager.DoPauseMusic(AudioRef.Ambient, 1f);
+        yield return CloseDoor();
+        
         
         // PHASE 1
-        yield return RunMapPhase(0, MonologueNodeName.MapIntro1);
         yield return RunPaintingPhase(0, MonologueNodeName.PaintingComplete1);
         yield return WaitForDoorDrag(1);
         
         // PHASE 2
-        yield return RunMapPhase(1, MonologueNodeName.MapIntro2);
+        yield return RunMapPhase(MonologueNodeName.MapIntro2);
         yield return RunPaintingPhase(1, MonologueNodeName.PaintingComplete2);
         yield return WaitForDoorDrag(2);
         
         // PHASE 3
-        yield return RunMapPhase(2, MonologueNodeName.MapIntro3);
+        yield return RunMapPhase(MonologueNodeName.MapIntro3);
         yield return RunPaintingPhase(2, MonologueNodeName.PaintingComplete3);
         yield return WaitForDoorDrag(3);
         
         // FINAL PAINTING
-        yield return RunMapPhase(3, MonologueNodeName.MapIntro4);
+        yield return RunMapPhase(MonologueNodeName.MapIntro4);
         yield return RunPaintingPhase(3, MonologueNodeName.PaintingComplete4);
         TexturePainter.PauseGame();
         
@@ -111,7 +128,7 @@ public class LevelRunner : MonoBehaviour
         yield return RestartLevelRoutine();
     }
     
-    private IEnumerator RunMapPhase(int phaseIndex, MonologueNodeName mapIntroNode)
+    private IEnumerator RunMapPhase(MonologueNodeName mapIntroNode)
     {
         SoundManager.DoPlayMusic(AudioRef.Ambient, 1f);
         DoorRight.OpenFully();
@@ -129,7 +146,7 @@ public class LevelRunner : MonoBehaviour
         yield return Utility.WaitUntilEvent(MapViewer.OnRequiredElementFound);
         
         MapViewer.Deactivate(.5f);
-        TexturePainter.ResetTexture();
+        //TexturePainter.ResetTexture();
         SoundManager.DoPauseMusic(AudioRef.Ambient, 1f);
         yield return CloseDoor();
     }

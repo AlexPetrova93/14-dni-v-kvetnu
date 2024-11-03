@@ -68,10 +68,20 @@ public class DraggableDoor : MonoBehaviour
         }
     }
 
-    public void OpenFully()
+    public void OpenFully(float time = .5f)
     {
         _dragging = false;
-        transform.DOMoveX(_openPositionX, .5f);
+        if (time == 0)
+        {
+            var transform1 = transform;
+            var pos = transform1.position;
+            pos.x = _openPositionX;
+            transform1.position = pos;
+        }
+        else
+        {
+            transform.DOMoveX(_openPositionX, time);
+        }
     }
     
     public void Activate()

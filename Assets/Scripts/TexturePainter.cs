@@ -57,11 +57,11 @@ public class TexturePainter : MonoBehaviour
     
     public void StartGame(int phaseIndex)
     {
-        PaintMask = new Texture2D(PaintMask.width, PaintMask.height, TextureFormat.Alpha8, true)
+        /*PaintMask = new Texture2D(PaintMask.width, PaintMask.height, TextureFormat.Alpha8, true)
         {
             filterMode = FilterMode.Bilinear,
         };
-        ResetTexture();
+        ResetTexture();*/
         SpriteMaterial.SetTexture(SecondTexParam, PhaseTextures[phaseIndex%PhaseTextures.Length]);
         _gameOn = true;
     }

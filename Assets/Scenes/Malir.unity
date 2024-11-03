@@ -530,7 +530,7 @@ Transform:
   m_GameObject: {fileID: 268520091}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.99, y: -2.3, z: 0}
+  m_LocalPosition: {x: 16.76, y: -2.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3434,7 +3434,7 @@ Transform:
   m_GameObject: {fileID: 979791275}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.18, y: -3.34, z: 0}
+  m_LocalPosition: {x: 16.75, y: -3.49, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4426,16 +4426,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MusicItems:
   - AudioRef: 0
-    AudioClip: {fileID: 8300000, guid: a47fb82818b8a2047bdc1db65a5f6446, type: 3}
+    AudioClip: {fileID: 8300000, guid: 6ca8fe5ecc8fb7a4da0b1bded50370ed, type: 3}
+    Volume: 1
   - AudioRef: 1
-    AudioClip: {fileID: 8300000, guid: f36ba5ffcb68fac42969da1f39646ace, type: 3}
+    AudioClip: {fileID: 8300000, guid: 99cdf93cb670dcb4ba4659cee0df2266, type: 3}
+    Volume: 1
   SfxItems:
   - AudioRef: 2
     AudioClip: {fileID: 8300000, guid: 4bbf791f93476e847bff13a392fb98dc, type: 3}
+    Volume: 1
   - AudioRef: 3
     AudioClip: {fileID: 8300000, guid: a7fca4bf4ad3cb543b3bdc4c1d9ba26a, type: 3}
+    Volume: 1
   - AudioRef: 4
     AudioClip: {fileID: 8300000, guid: e2a654bcd7c11054a8d8ba5bfc8ec3e0, type: 3}
+    Volume: 1
 --- !u!4 &1087031706
 Transform:
   m_ObjectHideFlags: 0
@@ -4463,6 +4468,7 @@ GameObject:
   - component: {fileID: 1153396822}
   - component: {fileID: 1153396821}
   - component: {fileID: 1153396820}
+  - component: {fileID: 1153396823}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -4595,6 +4601,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1153396823
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153396818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1153396822}
+  MoveSpeed: -0.2
 --- !u!1 &1202394600
 GameObject:
   m_ObjectHideFlags: 0
@@ -5523,7 +5543,7 @@ Transform:
   m_GameObject: {fileID: 1685168812}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.99, y: -2.3, z: 0}
+  m_LocalPosition: {x: 16.76, y: -2.81, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5651,6 +5671,7 @@ GameObject:
   - component: {fileID: 1716230399}
   - component: {fileID: 1716230398}
   - component: {fileID: 1716230397}
+  - component: {fileID: 1716230400}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -5783,6 +5804,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1716230400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716230395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1716230399}
+  MoveSpeed: 0.2
 --- !u!1 &1724557643
 GameObject:
   m_ObjectHideFlags: 0
@@ -5879,7 +5914,7 @@ Transform:
   m_GameObject: {fileID: 1762433902}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.99, y: -2.3, z: 0}
+  m_LocalPosition: {x: 16.76, y: -2.91, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6030,7 +6065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -61.6, y: 0}
+  m_AnchoredPosition: {x: -61.600098, y: 0}
   m_SizeDelta: {x: 114, y: 63}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1937299616

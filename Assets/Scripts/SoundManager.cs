@@ -17,6 +17,7 @@ public struct AudioItem
 {
     public AudioRef AudioRef;
     public AudioClip AudioClip;
+    public float Volume;
 }
 
 public struct BufferedAudioSource
@@ -32,27 +33,34 @@ public class SoundManager : MonoBehaviour
 
     private Dictionary<AudioRef, AudioSource> _musicClips = new();
     private Dictionary<AudioRef, BufferedAudioSource> _sfxClips = new();
+    
+    private Dictionary<AudioRef, float> _volumes = new();
 
     public void Init()
     {
+    // TODO volumes
         foreach (var musicItem in MusicItems)
         {
-            _musicClips.Add(musicItem.AudioRef, CreateAudioSource(musicItem));
+            _musicClips.Add(musicItem.AudioRef, CreateAudioSource(musicItem, true));
+            _volumes.Add(musicItem.AudioRef, musicItem.Volume);
         }
         foreach (var sfxItem in SfxItems)
         {
             _sfxClips.Add(sfxItem.AudioRef, CreateBufferedAudioSource(sfxItem));
+            _volumes.Add(sfxItem.AudioRef, sfxItem.Volume);
         }
     }
 
-    private AudioSource CreateAudioSource(AudioItem audioItem)
+    private AudioSource CreateAudioSource(AudioItem audioItem, bool loop)
     {
         var go = new GameObject(audioItem.AudioRef.ToString());
         go.transform.SetParent(transform);
         go.transform.localPosition = Vector3.zero;
         var src = go.AddComponent<AudioSource>();
         src.clip = audioItem.AudioClip;
-        src.playOnAwake = false;
+        src.playOnAwake = loop;
+        src.loop = loop;
+        src.volume = loop ? 0 : audioItem.Volume;
         return src;
     }
     
@@ -62,7 +70,7 @@ public class SoundManager : MonoBehaviour
         bufSrc.Sources = new AudioSource[bufferLen];
         for (var i = 0; i < bufSrc.Sources.Length; i++)
         {
-            bufSrc.Sources[i] = CreateAudioSource(audioItem);
+            bufSrc.Sources[i] = CreateAudioSource(audioItem, false);
         }
         
         return bufSrc;
@@ -71,16 +79,17 @@ public class SoundManager : MonoBehaviour
     public void PlayMusic(AudioRef audioRef)
     {
         var src = _musicClips[audioRef];
-        src.Play();
+        src.volume = _volumes[audioRef];
     }
     
     public void DoPlayMusic(AudioRef audioRef, float fadeTime)
     {
         var src = _musicClips[audioRef];
+        var volume = _volumes[audioRef];
         src.Play();
         src.volume = 0;
         src.DOKill();
-        src.DOFade(1, fadeTime);
+        src.DOFade(volume, fadeTime);
     }
 
     public void PauseMusic(AudioRef audioRef)
