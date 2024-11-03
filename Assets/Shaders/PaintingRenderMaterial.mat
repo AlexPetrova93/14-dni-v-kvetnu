@@ -31,7 +31,7 @@ Material:
     m_Floats:
     - _ActiveFlag: 1
     m_Colors:
-    - _BrushInfo: {r: -19.919943, g: 225.54176, b: 50.075985, a: 50.075985}
+    - _BrushInfo: {r: 791.6875, g: 674.1331, b: 50.00577, a: 50.00577}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _PastBrushInfo: {r: 1525.9463, g: 343.6365, b: 50, a: 50}
   m_BuildTextureStacks: []

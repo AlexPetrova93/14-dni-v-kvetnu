@@ -80,6 +80,7 @@ public class SoundManager : MonoBehaviour
     {
         var src = _musicClips[audioRef];
         src.volume = _volumes[audioRef];
+        src.Play();
     }
     
     public void DoPlayMusic(AudioRef audioRef, float fadeTime)

@@ -4614,7 +4614,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 1153396822}
-  MoveSpeed: -0.2
+  HalfRange: 5
+  WaveStrength: 0.1
+  WaveFrequency: 2
+  MoveSpeed: 2
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &1202394600
 GameObject:
   m_ObjectHideFlags: 0
@@ -5817,7 +5821,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpriteRenderer: {fileID: 1716230399}
-  MoveSpeed: 0.2
+  HalfRange: 2
+  WaveStrength: 0.05
+  WaveFrequency: 1
+  MoveSpeed: -0.2
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &1724557643
 GameObject:
   m_ObjectHideFlags: 0
