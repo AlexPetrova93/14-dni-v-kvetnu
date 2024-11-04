@@ -6383,7 +6383,7 @@ MonoBehaviour:
   HalfRange: 5
   WaveStrength: 0.1
   WaveFrequency: 3.5
-  MoveSpeed: 1.5
+  MoveSpeed: -1.5
   _minMaxX: {x: 0, y: 0}
 --- !u!1 &2060332158
 GameObject:
@@ -6546,7 +6546,7 @@ MonoBehaviour:
   HalfRange: 4
   WaveStrength: 0.04
   WaveFrequency: 1
-  MoveSpeed: -1
+  MoveSpeed: 1
   _minMaxX: {x: 0, y: 0}
 --- !u!1 &2077270465
 GameObject:
