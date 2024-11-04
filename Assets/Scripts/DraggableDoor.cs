@@ -91,7 +91,7 @@ public class DraggableDoor : MonoBehaviour
         {
             DoorHandle.transform.localRotation = Quaternion.Euler(0,0,rot);
         });*/
-        DoorHandle.transform.DOShakeRotation(1, 30);
+        //DoorHandle.transform.DOShakeRotation(1, 30);
         //DoorHandle.DOFade(.5f, .2f);
         _active = true;
     }

@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 50300691}
   - component: {fileID: 50300690}
   - component: {fileID: 50300689}
+  - component: {fileID: 50300692}
   m_Layer: 0
   m_Name: farma_albiny_a_hortenzie
   m_TagString: Untagged
@@ -267,6 +268,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &50300692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 50300687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 50300691}
+  Frames:
+  - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
+  - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
+  - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &76629415
 GameObject:
   m_ObjectHideFlags: 0
@@ -620,6 +640,7 @@ GameObject:
   - component: {fileID: 201177554}
   - component: {fileID: 201177553}
   - component: {fileID: 201177552}
+  - component: {fileID: 201177555}
   m_Layer: 0
   m_Name: vrba
   m_TagString: Untagged
@@ -752,6 +773,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &201177555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201177550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 201177554}
+  Frames:
+  - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
+  - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
+  - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &268520091
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,6 +804,7 @@ GameObject:
   - component: {fileID: 268520095}
   - component: {fileID: 268520094}
   - component: {fileID: 268520093}
+  - component: {fileID: 268520096}
   m_Layer: 0
   m_Name: kemp_pod_horami
   m_TagString: Untagged
@@ -896,6 +937,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &268520096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268520091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 268520095}
+  Frames:
+  - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
+  - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
+  - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &272196252
 GameObject:
   m_ObjectHideFlags: 0
@@ -1271,6 +1331,7 @@ GameObject:
   - component: {fileID: 365518659}
   - component: {fileID: 365518658}
   - component: {fileID: 365518660}
+  - component: {fileID: 365518661}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -1421,6 +1482,25 @@ MonoBehaviour:
   WaveFrequency: 0.5
   MoveSpeed: -0.5
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &365518661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 365518655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 365518657}
+  Frames:
+  - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
+  - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
+  - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &441901904
 GameObject:
   m_ObjectHideFlags: 0
@@ -2076,6 +2156,7 @@ GameObject:
   - component: {fileID: 591693151}
   - component: {fileID: 591693150}
   - component: {fileID: 591693153}
+  - component: {fileID: 591693154}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -2226,6 +2307,25 @@ MonoBehaviour:
   WaveFrequency: 0.4
   MoveSpeed: 0.2
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &591693154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591693148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 591693152}
+  Frames:
+  - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
+  - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
+  - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &609929778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2323,6 +2423,7 @@ GameObject:
   - component: {fileID: 642530519}
   - component: {fileID: 642530518}
   - component: {fileID: 642530521}
+  - component: {fileID: 642530522}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -2473,6 +2574,25 @@ MonoBehaviour:
   WaveFrequency: 1
   MoveSpeed: -0.3
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &642530522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642530516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 642530520}
+  Frames:
+  - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
+  - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
+  - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &664121982
 GameObject:
   m_ObjectHideFlags: 0
@@ -2569,6 +2689,7 @@ GameObject:
   - component: {fileID: 666940102}
   - component: {fileID: 666940101}
   - component: {fileID: 666940100}
+  - component: {fileID: 666940103}
   m_Layer: 0
   m_Name: farma_albiny_a_hortenzie
   m_TagString: Untagged
@@ -2701,6 +2822,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &666940103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 666940098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 666940102}
+  Frames:
+  - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
+  - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
+  - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &712885175
 GameObject:
   m_ObjectHideFlags: 0
@@ -3286,6 +3426,7 @@ GameObject:
   - component: {fileID: 850479342}
   - component: {fileID: 850479341}
   - component: {fileID: 850479340}
+  - component: {fileID: 850479343}
   m_Layer: 0
   m_Name: farma_albiny_a_hortenzie
   m_TagString: Untagged
@@ -3418,6 +3559,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &850479343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850479338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 850479342}
+  Frames:
+  - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
+  - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
+  - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &867819536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3430,6 +3590,7 @@ GameObject:
   - component: {fileID: 867819538}
   - component: {fileID: 867819540}
   - component: {fileID: 867819539}
+  - component: {fileID: 867819541}
   m_Layer: 0
   m_Name: "vyhl\xEDdka (1)"
   m_TagString: Untagged
@@ -3562,6 +3723,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.342812, y: 3.2974043}
   m_EdgeRadius: 0
+--- !u!114 &867819541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867819536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 867819538}
+  Frames:
+  - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
+  - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
+  - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &915083670
 GameObject:
   m_ObjectHideFlags: 0
@@ -3760,7 +3940,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 5e9f65dbd9ff9b74dbeb150de32e2d05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3884088cbf1fa646aa6d4f6b9219e1f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3790,6 +3970,7 @@ GameObject:
   - component: {fileID: 979791279}
   - component: {fileID: 979791278}
   - component: {fileID: 979791277}
+  - component: {fileID: 979791280}
   m_Layer: 0
   m_Name: kemp_pod_horami
   m_TagString: Untagged
@@ -3922,6 +4103,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &979791280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979791275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 979791279}
+  Frames:
+  - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
+  - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
+  - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &992292835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4143,6 +4343,7 @@ GameObject:
   - component: {fileID: 1024418103}
   - component: {fileID: 1024418102}
   - component: {fileID: 1024418101}
+  - component: {fileID: 1024418104}
   m_Layer: 0
   m_Name: vrba
   m_TagString: Untagged
@@ -4275,6 +4476,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1024418104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024418099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1024418103}
+  Frames:
+  - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
+  - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
+  - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1054984076
 GameObject:
   m_ObjectHideFlags: 0
@@ -4287,6 +4507,7 @@ GameObject:
   - component: {fileID: 1054984080}
   - component: {fileID: 1054984079}
   - component: {fileID: 1054984078}
+  - component: {fileID: 1054984081}
   m_Layer: 0
   m_Name: farma_albiny_a_hortenzie
   m_TagString: Untagged
@@ -4419,6 +4640,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1054984081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054984076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1054984080}
+  Frames:
+  - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
+  - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
+  - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1072394809
 GameObject:
   m_ObjectHideFlags: 0
@@ -4431,6 +4671,7 @@ GameObject:
   - component: {fileID: 1072394811}
   - component: {fileID: 1072394813}
   - component: {fileID: 1072394812}
+  - component: {fileID: 1072394814}
   m_Layer: 0
   m_Name: vrba
   m_TagString: Untagged
@@ -4563,6 +4804,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MonologueNodeName: 29
+--- !u!114 &1072394814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072394809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1072394811}
+  Frames:
+  - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
+  - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
+  - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1076732811
 GameObject:
   m_ObjectHideFlags: 0
@@ -5068,6 +5328,7 @@ GameObject:
   - component: {fileID: 1202394602}
   - component: {fileID: 1202394604}
   - component: {fileID: 1202394603}
+  - component: {fileID: 1202394605}
   m_Layer: 0
   m_Name: "vyhl\xEDdka"
   m_TagString: Untagged
@@ -5200,6 +5461,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.0514822, y: 3.521059}
   m_EdgeRadius: 0
+--- !u!114 &1202394605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1202394600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1202394602}
+  Frames:
+  - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
+  - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
+  - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1243207618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5284,6 +5564,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 915083672}
+  - {fileID: 1592953608}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1243207621
@@ -5661,6 +5942,7 @@ GameObject:
   - component: {fileID: 1399292403}
   - component: {fileID: 1399292405}
   - component: {fileID: 1399292404}
+  - component: {fileID: 1399292406}
   m_Layer: 0
   m_Name: "vyhl\xEDdka"
   m_TagString: Untagged
@@ -5793,6 +6075,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5867782, y: 3.8186636}
   m_EdgeRadius: 0
+--- !u!114 &1399292406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399292401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1399292403}
+  Frames:
+  - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
+  - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
+  - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1403462636
 GameObject:
   m_ObjectHideFlags: 0
@@ -5889,6 +6190,7 @@ GameObject:
   - component: {fileID: 1466725954}
   - component: {fileID: 1466725953}
   - component: {fileID: 1466725952}
+  - component: {fileID: 1466725955}
   m_Layer: 0
   m_Name: vrba
   m_TagString: Untagged
@@ -6021,6 +6323,125 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1466725955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466725950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1466725954}
+  Frames:
+  - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
+  - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
+  - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartFrame: 0
+  FrameRate: 3
+--- !u!1 &1592953605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592953608}
+  - component: {fileID: 1592953607}
+  - component: {fileID: 1592953606}
+  m_Layer: 0
+  m_Name: arrow222
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1592953606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592953605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea60d570d1cd76439ef2718fcfca114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1592953607}
+  MinStretch: 0.18
+  MaxStretch: 0.39
+--- !u!212 &1592953607
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592953605}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1075213043
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: d1939affd56699d48b80b6f188de58ef, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6.57, y: 3.47}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 1
+--- !u!4 &1592953608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592953605}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.09, y: -0.09, z: 0}
+  m_LocalScale: {x: 0.18, y: 0.25, z: 0.25}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1243207620}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1610936924
 GameObject:
   m_ObjectHideFlags: 0
@@ -6117,6 +6538,7 @@ GameObject:
   - component: {fileID: 1685168816}
   - component: {fileID: 1685168815}
   - component: {fileID: 1685168814}
+  - component: {fileID: 1685168817}
   m_Layer: 0
   m_Name: kemp_pod_horami
   m_TagString: Untagged
@@ -6249,6 +6671,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1685168817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685168812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1685168816}
+  Frames:
+  - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
+  - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
+  - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1716230395
 GameObject:
   m_ObjectHideFlags: 0
@@ -6262,6 +6703,7 @@ GameObject:
   - component: {fileID: 1716230398}
   - component: {fileID: 1716230397}
   - component: {fileID: 1716230400}
+  - component: {fileID: 1716230401}
   m_Layer: 0
   m_Name: plachetnice
   m_TagString: Untagged
@@ -6412,6 +6854,25 @@ MonoBehaviour:
   WaveFrequency: 1
   MoveSpeed: -0.2
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &1716230401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716230395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1716230399}
+  Frames:
+  - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
+  - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
+  - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1724557643
 GameObject:
   m_ObjectHideFlags: 0
@@ -6492,6 +6953,7 @@ GameObject:
   - component: {fileID: 1762433904}
   - component: {fileID: 1762433906}
   - component: {fileID: 1762433905}
+  - component: {fileID: 1762433907}
   m_Layer: 0
   m_Name: kemp_pod_horami
   m_TagString: Untagged
@@ -6624,6 +7086,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.06, y: 2.73}
   m_EdgeRadius: 0
+--- !u!114 &1762433907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762433902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1762433904}
+  Frames:
+  - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
+  - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
+  - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1816367608
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,6 +7271,7 @@ GameObject:
   - component: {fileID: 1989657603}
   - component: {fileID: 1989657605}
   - component: {fileID: 1989657604}
+  - component: {fileID: 1989657606}
   m_Layer: 0
   m_Name: "vyhl\xEDdka"
   m_TagString: Untagged
@@ -6922,6 +7404,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.1283672, y: 3.5583344}
   m_EdgeRadius: 0
+--- !u!114 &1989657606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989657601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1989657603}
+  Frames:
+  - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
+  - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
+  - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &2041138156
 GameObject:
   m_ObjectHideFlags: 0
@@ -7499,6 +8000,7 @@ MonoBehaviour:
   Fader: {fileID: 822652107}
   DoorLeft: {fileID: 2077270467}
   DoorRight: {fileID: 1243207621}
+  TutorialArrow: {fileID: 1592953606}
 --- !u!4 &2118502973
 Transform:
   m_ObjectHideFlags: 0

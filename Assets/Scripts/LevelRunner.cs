@@ -18,6 +18,8 @@ public class LevelRunner : MonoBehaviour
     
     public Transform DoorLeft;
     public DraggableDoor DoorRight;
+
+    public TutorialArrow TutorialArrow;
     
     private float _doorLeftClosedX;
     private float _doorRightClosedX;
@@ -102,10 +104,13 @@ public class LevelRunner : MonoBehaviour
         SoundManager.DoPauseMusic(AudioRef.Ambient, 1f);
         yield return CloseDoor();
         
-        
         // PHASE 1
         yield return RunPaintingPhase(0, MonologueNodeName.PaintingComplete1);
+        
+        // tutorial arrow here
+        TutorialArrow.Show();
         yield return WaitForDoorDrag(1);
+        TutorialArrow.Hide();
         
         // PHASE 2
         yield return RunMapPhase(MonologueNodeName.MapIntro2);
