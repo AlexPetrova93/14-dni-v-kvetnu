@@ -38,8 +38,6 @@ public class FloatingBoat : MonoBehaviour
             
         }
         
-        // TODO y + sin(time)
-
         var newPos = transform.localPosition;
         newPos.x += moveX;
         newPos.y = _origY + Mathf.Sin(Time.time * WaveFrequency) * WaveStrength;

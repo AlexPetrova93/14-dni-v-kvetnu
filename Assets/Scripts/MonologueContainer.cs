@@ -19,43 +19,45 @@ public static class MonologueContainer
         // POZOR intro tam ted nikde neni !!!
         { MonologueNodeName.Intro, 
             "Bydlim na tomhle ostrove od jakziva.\n" +
-            "Neni tu moc co delat, takze vetsinu casu travim malbou." },
+            "Neni tu moc co delat, takze vetsinu casu travim malbou." },  // todo tohle nekam zapracovat
         
         
         // ----------------------------------------------------------------------------------------------------
-        
-        
-        { MonologueNodeName.PaintingComplete1, 
-            "To jsem to ale krasne namaloval.\n" +
-            "Mohl bych se podivat, jak to vypada venku" },
         
         { MonologueNodeName.MapIntro1, 
-            "Krasny den.\n" +
-            "Porozhlednu se po okoli." },
+            "Je krasný den.\n" +
+            "Porozhlédnu se po okolí." },
         
         { MonologueNodeName.Mountains1, 
-            "Tohle jsou mracne hory - koment 1.\n" +
-            "Cas jit je namalovat" },
+            "Ty hory dneska vypadají obzvlášť namalovatelně.\n" +
+            "Jednou bych se na ně chtěl jít podívat, ale bojím se, že bych tam urmz." },
         
         { MonologueNodeName.Willow1, 
-            "Vrba <3" },
+            "O téhle vrbě psal strýc v deníku, co mi nechal.\n" +
+            "Prý se k tomu pojí nějaké náboženství nebo co.\n" +
+            "Z jeho zápisků to zní jak kraviny." },
         { MonologueNodeName.Farm1, 
-            "Farma?" },
+            "Tenhle pozemek býval dřív opuštěný, ale teď to vypadá, že je tam celkem rušno.\n" +
+            "Zajímalo by mě, co hezkého si tam pěstují." },
         { MonologueNodeName.Yacht1, 
-            "Jachta" },
+            "Už zas jezdí dokola jak magor.\n" +
+            "Pravidelně se snažím upoutat jeho pozornost, ale asi mě neslyší přes ten svůj motor." },
         { MonologueNodeName.Boat1, 
-            "Lodicka" },
+            "Na týhle lodi jsem nikdy neviděl jediného člověka.\n" +
+            "Jak kdyby se tam plavila samovolně." },
         { MonologueNodeName.Camp1, 
-            "Kemp." },
-        { MonologueNodeName.Flag1, 
-            "Vyhlidka." },
+            "Často odsud slyším hudbu, jak kdyby tam někdo pravidelně trénoval na kytaru.\n" +
+            "Přes tu vodu se to hezky nese." },
+        
+        { MonologueNodeName.PaintingComplete1, 
+            "Skvělá práce, to bude jeden z mých lepších.\n" +
+            "Mohl bych se podívat, jak to vypadá venku." }, // todo nejakz lepsi hint na otevreni dveri
+        
+        /*{ MonologueNodeName.Flag1, 
+            "Jednou bych se tam chtěl podívat, ale bojím se, že bych tam urmz." },*/
         
         
         // ----------------------------------------------------------------------------------------------------
-        
-        
-        { MonologueNodeName.PaintingComplete2, 
-            "To jsem to ale krasne namaloval" },
         
         { MonologueNodeName.MapIntro2, 
             "Dost se toho na mape meni.\n" +
@@ -66,28 +68,30 @@ public static class MonologueContainer
             "Cas jit je namalovat" },
         
         { MonologueNodeName.Willow2, 
-            "Vrba <3" },
+            "Včera jsem zahlédl nějaký průvod" },
         { MonologueNodeName.Farm2, 
-            "Farma?" },
+            "Rajčata? Možná jablka?\n" +
+            "Dal bych si jablka, jediné ovoce, co mi tady vozí, jsou třešně." },
         { MonologueNodeName.Yacht2, 
-            "Jachta" },
+            "jachta" },
         { MonologueNodeName.Boat2, 
             "Lodicka" },
         { MonologueNodeName.Camp2, 
             "Kemp." },
-        { MonologueNodeName.Flag2, 
-            "Vyhlidka." },
+
+        { MonologueNodeName.PaintingComplete2, 
+            "Hmm...\n" +
+            "Tu velikost toho plesa jsem asi trochu přehnal." },
+        
+        /*{ MonologueNodeName.Flag2, 
+            "Vyhlidka." },*/
         
         
         // ----------------------------------------------------------------------------------------------------
         
-        
-        { MonologueNodeName.PaintingComplete3, 
-            "To jsem to ale krasne namaloval" },
-        
         { MonologueNodeName.MapIntro3, 
             "Opet se toho dost na mape meni.\n" +
-            "Mam pocit, ze to pleso byvalo mensi." },
+            "..." },
         
         { MonologueNodeName.Mountains3, 
             "Tohle jsou mracne hory - koment 3.\n" +
@@ -96,49 +100,58 @@ public static class MonologueContainer
         { MonologueNodeName.Willow3, 
             "Vrba <3" },
         { MonologueNodeName.Farm3, 
-            "Farma?" },
+            "Včera jsem konečně dostal docela velkou nadílku jablek.\n" +
+            "Zajímalo by mě, jestli byly od nich." },
         { MonologueNodeName.Yacht3, 
             "Jachta" },
         { MonologueNodeName.Boat3, 
             "Lodicka" },
         { MonologueNodeName.Camp3, 
             "Kemp." },
-        { MonologueNodeName.Flag3, 
-            "Vyhlidka." },
+        
+        { MonologueNodeName.PaintingComplete3, 
+            "Nemá na těch horách být víc sněhu?\n" +
+            "Asi že je léto." },
+        
+        /*{ MonologueNodeName.Flag3, 
+            "Vyhlidka." },*/
         
         
         // ----------------------------------------------------------------------------------------------------
         
         
-        { MonologueNodeName.PaintingComplete4, 
-            "Konecne jsem namaloval vrbu" },
-        
         { MonologueNodeName.MapIntro4, 
             "Opet se toho dost na mape meni.\n" +
-            "Mam pocit, ze to pleso byvalo mnohem mensi." },
+            "Mám pocit, ze to pleso bývalo menší." },
         
         { MonologueNodeName.Mountains4, 
             "Tohle jsou mracne hory - koment 4.\n" +
-            "Cas jit je namalovat" },
+            "Teď už to vlastně vypadá, že už by tam nemusela být až taková zima." },
         
         { MonologueNodeName.Willow4, 
             "Vrba <3" },
         { MonologueNodeName.Farm4, 
             "Farma?" },
         { MonologueNodeName.Yacht4, 
-            "Jachta" },
+            "Už se ani nesnažím na ně volat, stejně mě neuslyší." },
         { MonologueNodeName.Boat4, 
-            "Lodicka" },
+            "Kéž bych tak měl takovou plachetnici." +
+            "Kéž by ji sem vítr zavál." },
         { MonologueNodeName.Camp4, 
             "Kemp." },
-        { MonologueNodeName.Flag4, 
-            "Vyhlidka." },
+        
+        { MonologueNodeName.PaintingComplete4, 
+            "Možná že na těch blábolech ze strýcova deníku něco bude." +
+            "" },
+        
+        /*{ MonologueNodeName.Flag4, 
+            "Teď už to vlastně vypadá, že už by tam nemusela být až taková zima." },*/
         
         // ----------------------------------------------------------------------------------------------------
 
         { MonologueNodeName.Outro, 
-            "A timto muj vstup konci.\n" +
-            "Umiram." },
+            "Dostanu se někdy pryč?\n" +
+            "Umřu tady?" },
 
         // ----------------------------------------------------------------------------------------------------
     };
