@@ -1,3 +1,5 @@
+using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FloatingBoat : MonoBehaviour
@@ -9,8 +11,12 @@ public class FloatingBoat : MonoBehaviour
     public float WaveFrequency = 2f;
     public float MoveSpeed = .2f;
     
+    public bool StartActive;
+    
     [SerializeField] private Vector2 _minMaxX;
     private float _origY;
+    
+    private bool _active;
     
     private void Start()
     {
@@ -18,11 +24,23 @@ public class FloatingBoat : MonoBehaviour
         _minMaxX = new Vector2(localPosition.x - HalfRange, localPosition.x + HalfRange);
         _origY = localPosition.y;
         MoveSpeed *= -1;
+        if (StartActive) Activate();
+        else Deactivate();
     }
 
+    public void Activate()
+    {
+        _active = true;
+    }
+    
+    public void Deactivate()
+    {
+        _active = false;
+    }
+    
     private void Update()
     {
-        if (!gameObject.activeInHierarchy) return;
+        if (!_active || !gameObject.activeInHierarchy) return;
         
         var moveX = Time.deltaTime * MoveSpeed;
         if (transform.localPosition.x + moveX < _minMaxX.x)

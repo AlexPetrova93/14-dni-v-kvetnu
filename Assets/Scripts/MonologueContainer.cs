@@ -16,38 +16,35 @@ public static class MonologueContainer
     public static Dictionary<MonologueNodeName, string> Monologues = new Dictionary<MonologueNodeName, string>()
     {
         // ----------------------------------------------------------------------------------------------------
-        // POZOR intro tam ted nikde neni !!!
-        { MonologueNodeName.Intro, 
+      /*{ MonologueNodeName.Intro, 
             "Bydlim na tomhle ostrove od jakziva.\n" +
-            "Neni tu moc co delat, takze vetsinu casu travim malbou." },  // todo tohle nekam zapracovat
+            "Neni tu moc co delat, takze vetsinu casu travim malbou." },  */
         
         
         // ----------------------------------------------------------------------------------------------------
         
         { MonologueNodeName.MapIntro1, 
-            "Je krasný den.\n" +
-            "Porozhlédnu se po okolí." },
+            "Bydlím na tomhle ostrově od jakživa.\n" +
+            "Není tu moc co dělat, takže většinu času travím malbou.\n" +
+            "Co bych tak dneska mohl namalovat?" },
         
         { MonologueNodeName.Mountains1, 
-            "Ty hory dneska vypadají obzvlášť namalovatelně.\n" +
-            "Jednou bych se na ně chtěl jít podívat, ale bojím se, že bych tam urmz." },
+            "Perfektní kompozice, impozantní součást krajiny - skvělá volba." },
         
         { MonologueNodeName.Willow1, 
-            "O téhle vrbě psal strýc v deníku, co mi nechal.\n" +
-            "Prý se k tomu pojí nějaké náboženství nebo co.\n" +
-            "Z jeho zápisků to zní jak kraviny." },
+            "Hmm... Vím, že někde tímhle směrem je nějaká památná vrba.\n" +
+            "Ale pořádně na ní nevidím, úplně se mi nechce si v té malbě vymýšlet." },
         { MonologueNodeName.Farm1, 
-            "Tenhle pozemek býval dřív opuštěný, ale teď to vypadá, že je tam celkem rušno.\n" +
-            "Zajímalo by mě, co hezkého si tam pěstují." },
+            "Opuštěná farma? To mi přijde takový až moc melancholický." },
         { MonologueNodeName.Yacht1, 
-            "Už zas jezdí dokola jak magor.\n" +
-            "Pravidelně se snažím upoutat jeho pozornost, ale asi mě neslyší přes ten svůj motor." },
+            "Hmm... ten jezdí dost rychle.\n" +
+            "Do toho se mi úplně nechce." },
         { MonologueNodeName.Boat1, 
-            "Na týhle lodi jsem nikdy neviděl jediného člověka.\n" +
-            "Jak kdyby se tam plavila samovolně." },
+            "No... loďka je to pěkná, pluje celkem pomalu...\n" +
+            "... ale určitě nenajdu něco zajímavějšího?" },
         { MonologueNodeName.Camp1, 
-            "Často odsud slyším hudbu, jak kdyby tam někdo pravidelně trénoval na kytaru.\n" +
-            "Přes tu vodu se to hezky nese." },
+            "To už je dost daleko doprava.\n" +
+            "Nechci si ještě u malby namoct krk." },
         
         { MonologueNodeName.PaintingComplete1, 
             "Skvělá práce, to bude jeden z mých lepších.\n" +
@@ -64,20 +61,25 @@ public static class MonologueContainer
             "Neni tu moc co delat, takze vetsinu casu travim malbou." },
         
         { MonologueNodeName.Mountains2, 
-            "Tohle jsou mracne hory - koment 2.\n" +
-            "Cas jit je namalovat" },
+            "...\n" +
+            "Jednou bych se na ně chtěl jít podívat, ale bojím se, že bych tam urmz."  },
         
         { MonologueNodeName.Willow2, 
-            "Včera jsem zahlédl nějaký průvod" },
+            "O téhle vrbě psal strýc v deníku, co mi nechal.\n" +
+            "Prý se k tomu pojí nějaké náboženství nebo co.\n" +
+            "Z jeho zápisků to zní jak kraviny." },
         { MonologueNodeName.Farm2, 
-            "Rajčata? Možná jablka?\n" +
-            "Dal bych si jablka, jediné ovoce, co mi tady vozí, jsou třešně." },
+            "Tenhle pozemek býval dřív opuštěný, ale teď to vypadá, že je tam celkem rušno.\n" +
+            "Zajímalo by mě, co hezkého si tam pěstují." },
         { MonologueNodeName.Yacht2, 
-            "jachta" },
+            "Už zas jezdí dokola jak magor.\n" +
+            "Pravidelně se snažím upoutat jeho pozornost, ale asi mě neslyší přes ten svůj motor." },
         { MonologueNodeName.Boat2, 
-            "Lodicka" },
+            "Na týhle lodi jsem nikdy neviděl jediného člověka.\n" +
+            "Jak kdyby se tam plavila samovolně." },
         { MonologueNodeName.Camp2, 
-            "Kemp." },
+            "Často odsud slyším hudbu, jak kdyby tam někdo pravidelně trénoval na kytaru.\n" +
+            "Přes tu vodu se to hezky nese." },
 
         { MonologueNodeName.PaintingComplete2, 
             "Hmm...\n" +
@@ -98,10 +100,10 @@ public static class MonologueContainer
             "Cas jit je namalovat" },
         
         { MonologueNodeName.Willow3, 
-            "Vrba <3" },
+            "Včera jsem zahlédl nějaký průvod" },
         { MonologueNodeName.Farm3, 
-            "Včera jsem konečně dostal docela velkou nadílku jablek.\n" +
-            "Zajímalo by mě, jestli byly od nich." },
+            "Rajčata? Možná jablka?\n" +
+            "Dal bych si jablka, jediné ovoce, co mi tady vozí, jsou třešně." },
         { MonologueNodeName.Yacht3, 
             "Jachta" },
         { MonologueNodeName.Boat3, 
@@ -131,11 +133,12 @@ public static class MonologueContainer
         { MonologueNodeName.Willow4, 
             "Vrba <3" },
         { MonologueNodeName.Farm4, 
-            "Farma?" },
+            "Včera jsem konečně dostal docela velkou nadílku jablek.\n" +
+            "Zajímalo by mě, jestli byly od nich." },
         { MonologueNodeName.Yacht4, 
             "Už se ani nesnažím na ně volat, stejně mě neuslyší." },
         { MonologueNodeName.Boat4, 
-            "Kéž bych tak měl takovou plachetnici." +
+            "Kéž bych tak měl takovou plachetnici.\n" +
             "Kéž by ji sem vítr zavál." },
         { MonologueNodeName.Camp4, 
             "Kemp." },

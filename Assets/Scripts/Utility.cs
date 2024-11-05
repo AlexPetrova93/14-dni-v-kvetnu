@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public struct InputStruct
 {
@@ -74,5 +75,12 @@ public static class Extensions
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
         canvasGroup.DOFade(0, time);
+    }
+
+    public static void SetAlpha(this Image image, float alpha)
+    {
+        var col = image.color;
+        col.a = alpha;
+        image.color = col;
     }
 }

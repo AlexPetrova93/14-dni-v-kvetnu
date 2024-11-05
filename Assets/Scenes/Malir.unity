@@ -170,6 +170,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 3
 --- !u!61 &50300690
 BoxCollider2D:
@@ -236,7 +241,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -285,6 +290,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
   - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
   - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &76629415
@@ -338,6 +344,7 @@ MonoBehaviour:
   WaveStrength: 0.1
   WaveFrequency: 1
   MoveSpeed: 0.4
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &76629418
 MonoBehaviour:
@@ -358,6 +365,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
   - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
   - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
   StartFrame: 2
   FrameRate: 3
 --- !u!212 &76629419
@@ -463,6 +471,7 @@ MonoBehaviour:
   WaveStrength: 0.1
   WaveFrequency: 1
   MoveSpeed: 0.4
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &83003192
 MonoBehaviour:
@@ -483,6 +492,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
   - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
   - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
   StartFrame: 2
   FrameRate: 3
 --- !u!212 &83003193
@@ -537,6 +547,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &88862579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88862580}
+  m_Layer: 0
+  m_Name: Birds (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &88862580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88862579}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.53, y: 0.12, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1010641113}
+  - {fileID: 1419986056}
+  - {fileID: 1552245986}
+  m_Father: {fileID: 715429380}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &142977542
 GameObject:
   m_ObjectHideFlags: 0
@@ -619,6 +663,7 @@ Transform:
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 856857549}
   - {fileID: 1610936925}
   - {fileID: 1072394810}
   - {fileID: 850479339}
@@ -657,9 +702,9 @@ Transform:
   m_GameObject: {fileID: 201177550}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.49, y: -3.42, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -16.65, y: -4.83, z: 0}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 288149439}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -720,6 +765,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 2
 --- !u!212 &201177554
 SpriteRenderer:
@@ -741,7 +791,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -790,6 +840,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
   - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
   - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &268520091
@@ -839,6 +890,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds:
+  - {fileID: 1396996249}
+  - {fileID: 507208788}
+  - {fileID: 76629417}
+  BirdAnimations:
+  - {fileID: 1396996250}
+  - {fileID: 507208789}
+  - {fileID: 76629418}
+  StartActive: 0
   MonologueNodeName: 15
 --- !u!61 &268520094
 BoxCollider2D:
@@ -905,7 +967,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -954,6 +1016,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
   - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
   - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &272196252
@@ -1050,6 +1113,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1592891883}
   - {fileID: 555232190}
   - {fileID: 971290919}
   - {fileID: 1084361613}
@@ -1168,6 +1232,7 @@ GameObject:
   - component: {fileID: 321518370}
   - component: {fileID: 321518369}
   - component: {fileID: 321518372}
+  - component: {fileID: 321518373}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -1202,6 +1267,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 13
 --- !u!61 &321518370
 BoxCollider2D:
@@ -1268,7 +1338,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1317,7 +1387,25 @@ MonoBehaviour:
   WaveStrength: 0.1
   WaveFrequency: 2
   MoveSpeed: 1
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &321518373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321518367}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 321518371}
+  Frames: []
+  StartActive: 0
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &365518655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1374,7 +1462,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1418,6 +1506,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 32
 --- !u!61 &365518659
 BoxCollider2D:
@@ -1481,6 +1574,7 @@ MonoBehaviour:
   WaveStrength: 0.05
   WaveFrequency: 0.5
   MoveSpeed: -0.5
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &365518661
 MonoBehaviour:
@@ -1499,6 +1593,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
   - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
   - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &441901904
@@ -1781,6 +1876,7 @@ MonoBehaviour:
   WaveStrength: 0.1
   WaveFrequency: 1
   MoveSpeed: 0.4
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &507208789
 MonoBehaviour:
@@ -1801,6 +1897,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
   - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
   - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!212 &507208790
@@ -2124,6 +2221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanvasGroup: {fileID: 555232194}
   RectTransform: {fileID: 555232190}
+  Gradient: {fileID: 1592891884}
   LeftPadding: 65
   TopPadding: 50
   MaxWidth: 1600
@@ -2191,6 +2289,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 14
 --- !u!61 &591693151
 BoxCollider2D:
@@ -2257,7 +2360,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2306,6 +2409,7 @@ MonoBehaviour:
   WaveStrength: 0.08
   WaveFrequency: 0.4
   MoveSpeed: 0.2
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &591693154
 MonoBehaviour:
@@ -2324,6 +2428,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
   - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
   - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &609929778
@@ -2458,6 +2563,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 23
 --- !u!61 &642530519
 BoxCollider2D:
@@ -2524,7 +2634,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2573,6 +2683,7 @@ MonoBehaviour:
   WaveStrength: 0.09
   WaveFrequency: 1
   MoveSpeed: -0.3
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &642530522
 MonoBehaviour:
@@ -2591,6 +2702,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
   - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
   - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &664121982
@@ -2724,6 +2836,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 12
 --- !u!61 &666940101
 BoxCollider2D:
@@ -2790,7 +2907,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2839,6 +2956,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
   - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
   - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &712885175
@@ -2866,7 +2984,7 @@ Transform:
   m_GameObject: {fileID: 712885175}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.31, y: 0.03, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2958,6 +3076,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1816367609}
+  - {fileID: 88862580}
   - {fileID: 510983861}
   - {fileID: 1024418100}
   - {fileID: 666940099}
@@ -3042,6 +3161,167 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726903793}
   m_CullTransparentMesh: 1
+--- !u!1 &734293343
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734293346}
+  - component: {fileID: 734293345}
+  - component: {fileID: 734293344}
+  - component: {fileID: 734293347}
+  m_Layer: 0
+  m_Name: Bird (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &734293344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734293343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 734293345}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 0
+  FrameRate: 3
+--- !u!212 &734293345
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734293343}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &734293346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734293343}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.86, y: 8.46, z: 0}
+  m_LocalScale: {x: 0.59, y: 0.59, z: 0.59}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 779282350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &734293347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734293343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 734293345}
+  HalfRange: 6
+  WaveStrength: 0.1
+  WaveFrequency: 1
+  MoveSpeed: -0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
+--- !u!1 &779282349
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 779282350}
+  m_Layer: 0
+  m_Name: Birds (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &779282350
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 779282349}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.58, y: -6.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1236543578}
+  - {fileID: 734293346}
+  - {fileID: 836266930}
+  m_Father: {fileID: 1324302717}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &798629891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3282,6 +3562,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822652105}
   m_CullTransparentMesh: 1
+--- !u!1 &836266927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 836266930}
+  - component: {fileID: 836266929}
+  - component: {fileID: 836266928}
+  - component: {fileID: 836266931}
+  m_Layer: 0
+  m_Name: Bird (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &836266928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836266927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 836266929}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 2
+  FrameRate: 3
+--- !u!212 &836266929
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836266927}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &836266930
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836266927}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.16, y: 8.52, z: 0}
+  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 779282350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &836266931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 836266927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 836266929}
+  HalfRange: 6
+  WaveStrength: 0.1
+  WaveFrequency: 1
+  MoveSpeed: -0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &839980566
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,6 +3868,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 30
 --- !u!61 &850479341
 BoxCollider2D:
@@ -3527,7 +3939,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3576,8 +3988,43 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
   - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
   - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
+--- !u!1 &856857548
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 856857549}
+  m_Layer: 0
+  m_Name: Birds (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &856857549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 856857548}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.31, y: -12.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1769525738}
+  - {fileID: 1020667190}
+  - {fileID: 1914687644}
+  m_Father: {fileID: 142977544}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &867819536
 GameObject:
   m_ObjectHideFlags: 0
@@ -3633,7 +4080,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3677,6 +4124,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds:
+  - {fileID: 1010641114}
+  - {fileID: 1419986057}
+  - {fileID: 1552245987}
+  BirdAnimations:
+  - {fileID: 1010641111}
+  - {fileID: 1419986054}
+  - {fileID: 1552245984}
+  StartActive: 0
   MonologueNodeName: 10
 --- !u!61 &867819540
 BoxCollider2D:
@@ -3740,6 +4198,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
   - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
   - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &915083670
@@ -4005,6 +4464,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 6
 --- !u!61 &979791278
 BoxCollider2D:
@@ -4071,7 +4535,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4120,6 +4584,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
   - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
   - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &992292835
@@ -4206,6 +4671,260 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1010641110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1010641113}
+  - component: {fileID: 1010641112}
+  - component: {fileID: 1010641111}
+  - component: {fileID: 1010641114}
+  m_Layer: 0
+  m_Name: Bird
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1010641111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010641110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1010641112}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 1
+  FrameRate: 3
+--- !u!212 &1010641112
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010641110}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1010641113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010641110}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.08, y: 8.010001, z: 0}
+  m_LocalScale: {x: 0.53000003, y: 0.53000003, z: 0.53000003}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 88862580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1010641114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010641110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1010641112}
+  HalfRange: 6
+  WaveStrength: 0.25
+  WaveFrequency: 1
+  MoveSpeed: -0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
+--- !u!1 &1020667187
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1020667190}
+  - component: {fileID: 1020667189}
+  - component: {fileID: 1020667188}
+  - component: {fileID: 1020667191}
+  m_Layer: 0
+  m_Name: Bird (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1020667188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020667187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1020667189}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 0
+  FrameRate: 3
+--- !u!212 &1020667189
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020667187}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1020667190
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020667187}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.86, y: 8.46, z: 0}
+  m_LocalScale: {x: 0.59, y: 0.59, z: 0.59}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 856857549}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1020667191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1020667187}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1020667189}
+  HalfRange: 6
+  WaveStrength: 0.1
+  WaveFrequency: 1
+  MoveSpeed: 0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &1022291023
 GameObject:
   m_ObjectHideFlags: 0
@@ -4257,6 +4976,7 @@ MonoBehaviour:
   WaveStrength: 0.1
   WaveFrequency: 1
   MoveSpeed: 0.4
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &1022291026
 MonoBehaviour:
@@ -4277,6 +4997,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
   - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
   - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!212 &1022291027
@@ -4360,9 +5081,9 @@ Transform:
   m_GameObject: {fileID: 1024418099}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.49, y: -4.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -16.46, y: -5.02, z: 0}
+  m_LocalScale: {x: 0.65, y: 0.65, z: 0.65}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 715429380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4423,6 +5144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 11
 --- !u!212 &1024418103
 SpriteRenderer:
@@ -4444,7 +5170,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4493,6 +5219,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
   - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
   - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &1054984076
@@ -4542,6 +5269,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds:
+  - {fileID: 1236543579}
+  - {fileID: 734293347}
+  - {fileID: 836266931}
+  BirdAnimations:
+  - {fileID: 1236543576}
+  - {fileID: 734293344}
+  - {fileID: 836266928}
+  StartActive: 0
   MonologueNodeName: 21
 --- !u!61 &1054984079
 BoxCollider2D:
@@ -4608,7 +5346,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4657,6 +5395,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e8655fe03e98edc488a81e06690294b7, type: 3}
   - {fileID: 21300000, guid: 998c8853bb164ef4085f524297597764, type: 3}
   - {fileID: 21300000, guid: df768c4679e4a4141a5681f832248c90, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &1072394809
@@ -4714,7 +5453,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4803,6 +5542,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds:
+  - {fileID: 1769525739}
+  - {fileID: 1020667191}
+  - {fileID: 1914687645}
+  BirdAnimations:
+  - {fileID: 1769525736}
+  - {fileID: 1020667188}
+  - {fileID: 1914687642}
+  StartActive: 0
   MonologueNodeName: 29
 --- !u!114 &1072394814
 MonoBehaviour:
@@ -4821,6 +5571,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
   - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
   - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &1076732811
@@ -4927,8 +5678,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Za\u010D\xEDt"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: ee0d81699307acc4fab1f925d65139e7, type: 2}
+  m_sharedMaterial: {fileID: -200133094257807043, guid: ee0d81699307acc4fab1f925d65139e7, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4952,8 +5703,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 42
-  m_fontSizeBase: 42
+  m_fontSize: 56
+  m_fontSizeBase: 56
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5166,6 +5917,7 @@ GameObject:
   - component: {fileID: 1153396821}
   - component: {fileID: 1153396820}
   - component: {fileID: 1153396823}
+  - component: {fileID: 1153396824}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -5200,6 +5952,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 4
 --- !u!61 &1153396821
 BoxCollider2D:
@@ -5266,7 +6023,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5315,7 +6072,25 @@ MonoBehaviour:
   WaveStrength: 0.1
   WaveFrequency: 2
   MoveSpeed: 2
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &1153396824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153396818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1153396822}
+  Frames: []
+  StartActive: 0
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &1202394600
 GameObject:
   m_ObjectHideFlags: 0
@@ -5371,7 +6146,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5415,6 +6190,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 19
 --- !u!61 &1202394604
 BoxCollider2D:
@@ -5478,8 +6258,136 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
   - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
   - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
+--- !u!1 &1236543575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1236543578}
+  - component: {fileID: 1236543577}
+  - component: {fileID: 1236543576}
+  - component: {fileID: 1236543579}
+  m_Layer: 0
+  m_Name: Bird
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1236543576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236543575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1236543577}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 1
+  FrameRate: 3
+--- !u!212 &1236543577
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236543575}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1236543578
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236543575}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.08, y: 8.010001, z: 0}
+  m_LocalScale: {x: 0.53000003, y: 0.53000003, z: 0.53000003}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 779282350}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1236543579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1236543575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1236543577}
+  HalfRange: 6
+  WaveStrength: 0.25
+  WaveFrequency: 1
+  MoveSpeed: -0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &1243207618
 GameObject:
   m_ObjectHideFlags: 0
@@ -5796,6 +6704,7 @@ Transform:
   m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 0.79999995}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 779282350}
   - {fileID: 490424443}
   - {fileID: 1466725951}
   - {fileID: 1054984077}
@@ -5856,6 +6765,7 @@ MonoBehaviour:
   WaveStrength: 0.25
   WaveFrequency: 1
   MoveSpeed: 0.4
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &1396996250
 MonoBehaviour:
@@ -5876,6 +6786,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
   - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
   - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
   StartFrame: 1
   FrameRate: 3
 --- !u!212 &1396996251
@@ -5985,7 +6896,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6029,6 +6940,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds:
+  - {fileID: 2056236016}
+  - {fileID: 1022291025}
+  - {fileID: 83003191}
+  BirdAnimations:
+  - {fileID: 2056236013}
+  - {fileID: 1022291026}
+  - {fileID: 83003192}
+  StartActive: 0
   MonologueNodeName: 1
 --- !u!61 &1399292405
 BoxCollider2D:
@@ -6092,6 +7014,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
   - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
   - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &1403462636
@@ -6178,6 +7101,133 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1419986053
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419986056}
+  - component: {fileID: 1419986055}
+  - component: {fileID: 1419986054}
+  - component: {fileID: 1419986057}
+  m_Layer: 0
+  m_Name: Bird (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1419986054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419986053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1419986055}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 0
+  FrameRate: 3
+--- !u!212 &1419986055
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419986053}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1419986056
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419986053}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.86, y: 8.46, z: 0}
+  m_LocalScale: {x: 0.59, y: 0.59, z: 0.59}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 88862580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1419986057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419986053}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1419986055}
+  HalfRange: 6
+  WaveStrength: 0.1
+  WaveFrequency: 1
+  MoveSpeed: -0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &1466725950
 GameObject:
   m_ObjectHideFlags: 0
@@ -6207,9 +7257,9 @@ Transform:
   m_GameObject: {fileID: 1466725950}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -16.49, y: -4.63, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -16.49, y: -4.86, z: 0}
+  m_LocalScale: {x: 0.85, y: 0.85, z: 0.85}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1324302717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6270,6 +7320,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 20
 --- !u!212 &1466725954
 SpriteRenderer:
@@ -6291,7 +7346,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6340,8 +7395,211 @@ MonoBehaviour:
   - {fileID: 21300000, guid: ec44751dd4b3cd0478aba3ff22abf730, type: 3}
   - {fileID: 21300000, guid: ce112340947ffdb48b523f29f2eeefbd, type: 3}
   - {fileID: 21300000, guid: 41f782b22f621c341ba96beb90966d3b, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
+--- !u!1 &1552245983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1552245986}
+  - component: {fileID: 1552245985}
+  - component: {fileID: 1552245984}
+  - component: {fileID: 1552245987}
+  m_Layer: 0
+  m_Name: Bird (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1552245984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552245983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1552245985}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 2
+  FrameRate: 3
+--- !u!212 &1552245985
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552245983}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1552245986
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552245983}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.16, y: 8.52, z: 0}
+  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 88862580}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1552245987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552245983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1552245985}
+  HalfRange: 6
+  WaveStrength: 0.1
+  WaveFrequency: 1
+  MoveSpeed: -0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
+--- !u!1 &1592891882
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592891883}
+  - component: {fileID: 1592891885}
+  - component: {fileID: 1592891884}
+  m_Layer: 5
+  m_Name: Gradient
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1592891883
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592891882}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 272196256}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 220}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1592891884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592891882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.1764706, g: 0.16470589, b: 0.15294118, a: 0.8}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: cc93b87c857b22642b630cbd59537a40, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1592891885
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1592891882}
+  m_CullTransparentMesh: 1
 --- !u!1 &1592953605
 GameObject:
   m_ObjectHideFlags: 0
@@ -6573,6 +7831,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 24
 --- !u!61 &1685168815
 BoxCollider2D:
@@ -6639,7 +7902,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6688,6 +7951,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
   - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
   - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &1716230395
@@ -6738,6 +8002,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 5
 --- !u!61 &1716230398
 BoxCollider2D:
@@ -6804,7 +8073,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6853,6 +8122,7 @@ MonoBehaviour:
   WaveStrength: 0.05
   WaveFrequency: 1
   MoveSpeed: -0.2
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!114 &1716230401
 MonoBehaviour:
@@ -6871,6 +8141,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 6c0195b3731bcbc47b5b00803136dc1d, type: 3}
   - {fileID: 21300000, guid: 1e67b4227d1ea814eb4e631ccdf14b1d, type: 3}
   - {fileID: 21300000, guid: a77fef7145cb55749a5cde00019d68dd, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &1724557643
@@ -6996,7 +8267,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7040,6 +8311,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 33
 --- !u!61 &1762433906
 BoxCollider2D:
@@ -7103,8 +8379,136 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 0041aa3ff0c535248aafb37e8effee42, type: 3}
   - {fileID: 21300000, guid: a80c4ce953daaf04c91311e8681378ce, type: 3}
   - {fileID: 21300000, guid: 85095871a0e5dc143934d18679da3212, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
+--- !u!1 &1769525735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1769525738}
+  - component: {fileID: 1769525737}
+  - component: {fileID: 1769525736}
+  - component: {fileID: 1769525739}
+  m_Layer: 0
+  m_Name: Bird
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1769525736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769525735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1769525737}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 1
+  FrameRate: 3
+--- !u!212 &1769525737
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769525735}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1769525738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769525735}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.08, y: 8.010001, z: 0}
+  m_LocalScale: {x: 0.53000003, y: 0.53000003, z: 0.53000003}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 856857549}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1769525739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769525735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1769525737}
+  HalfRange: 6
+  WaveStrength: 0.25
+  WaveFrequency: 1
+  MoveSpeed: 0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &1816367608
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,7 +8534,7 @@ Transform:
   m_GameObject: {fileID: 1816367608}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.84, y: 0.72, z: 0}
+  m_LocalPosition: {x: 12.7, y: -9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7139,6 +8543,133 @@ Transform:
   - {fileID: 76629416}
   m_Father: {fileID: 715429380}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1914687641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1914687644}
+  - component: {fileID: 1914687643}
+  - component: {fileID: 1914687642}
+  - component: {fileID: 1914687645}
+  m_Layer: 0
+  m_Name: Bird (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1914687642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914687641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1914687643}
+  Frames:
+  - {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  - {fileID: 21300000, guid: 9e82689f61099d741b7c581c9bfd03b1, type: 3}
+  - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
+  - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
+  - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
+  StartFrame: 2
+  FrameRate: 3
+--- !u!212 &1914687643
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914687641}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 5b64862a5241867478f3ada9205567bc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.25, y: 0.65}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1914687644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914687641}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.16, y: 8.52, z: 0}
+  m_LocalScale: {x: 0.44, y: 0.44, z: 0.44}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 856857549}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1914687645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1914687641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a1fc581a0bbc5049a1f8f4ee9b8610b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 1914687643}
+  HalfRange: 6
+  WaveStrength: 0.1
+  WaveFrequency: 1
+  MoveSpeed: 0.4
+  StartActive: 0
+  _minMaxX: {x: 0, y: 0}
 --- !u!1 &1937299614
 GameObject:
   m_ObjectHideFlags: 0
@@ -7314,7 +8845,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7358,6 +8889,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 28
 --- !u!61 &1989657605
 BoxCollider2D:
@@ -7421,6 +8957,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: a9ed3f54b2f4b464b9f7968683b68e27, type: 3}
   - {fileID: 21300000, guid: 0c9e4c71266d17542a23acd94531a6ef, type: 3}
   - {fileID: 21300000, guid: e425a16027911ad49aed58949cdd1dc6, type: 3}
+  StartActive: 0
   StartFrame: 0
   FrameRate: 3
 --- !u!1 &2041138156
@@ -7436,6 +8973,7 @@ GameObject:
   - component: {fileID: 2041138159}
   - component: {fileID: 2041138158}
   - component: {fileID: 2041138161}
+  - component: {fileID: 2041138162}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -7470,6 +9008,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 22
 --- !u!61 &2041138159
 BoxCollider2D:
@@ -7536,7 +9079,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7585,7 +9128,25 @@ MonoBehaviour:
   WaveStrength: 0.1
   WaveFrequency: 3.5
   MoveSpeed: -1.5
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &2041138162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041138156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 2041138160}
+  Frames: []
+  StartActive: 0
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &2056236012
 GameObject:
   m_ObjectHideFlags: 0
@@ -7624,6 +9185,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9bb76757971ba5d439cf91eeff7db25b, type: 3}
   - {fileID: 21300000, guid: 1ce1d035a38453c4c960ef9e0652b378, type: 3}
   - {fileID: 21300000, guid: 4705489debaf3af4fbe375a8405c7616, type: 3}
+  StartActive: 0
   StartFrame: 1
   FrameRate: 3
 --- !u!212 &2056236014
@@ -7710,6 +9272,7 @@ MonoBehaviour:
   WaveStrength: 0.25
   WaveFrequency: 1
   MoveSpeed: 0.4
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
 --- !u!1 &2060332158
 GameObject:
@@ -7724,6 +9287,7 @@ GameObject:
   - component: {fileID: 2060332162}
   - component: {fileID: 2060332161}
   - component: {fileID: 2060332163}
+  - component: {fileID: 2060332164}
   m_Layer: 0
   m_Name: jachta
   m_TagString: Untagged
@@ -7766,7 +9330,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c2e9239495db63a48a68bbc0555cdd47, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7810,6 +9374,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93fed874dfd694c479bb691f313f8654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AnimatedSprite: {fileID: 0}
+  MovingSprite: {fileID: 0}
+  Birds: []
+  BirdAnimations: []
+  StartActive: 0
   MonologueNodeName: 31
 --- !u!61 &2060332162
 BoxCollider2D:
@@ -7873,7 +9442,25 @@ MonoBehaviour:
   WaveStrength: 0.04
   WaveFrequency: 1
   MoveSpeed: 1
+  StartActive: 0
   _minMaxX: {x: 0, y: 0}
+--- !u!114 &2060332164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060332158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c61900b2805f05c45885e42c4160ea10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpriteRenderer: {fileID: 2060332160}
+  Frames: []
+  StartActive: 0
+  StartFrame: 0
+  FrameRate: 3
 --- !u!1 &2077270465
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class LevelRunner : MonoBehaviour
     private float _doorLeftClosedX;
     private float _doorRightClosedX;
     
-    private const float DoorLeftOpenX = -18.5f;
+    private const float DoorLeftOpenX = -19f;
     private const float DoorRightOpenX = 21.75f;
 
     public void RestartLevel()

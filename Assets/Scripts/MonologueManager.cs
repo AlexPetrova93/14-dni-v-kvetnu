@@ -9,6 +9,7 @@ public class MonologueManager : MonoBehaviour
     public CanvasGroup CanvasGroup;
 
     public RectTransform RectTransform;
+    public Image Gradient;
     
     public float LeftPadding = 65;
     public float TopPadding = 50;
@@ -23,6 +24,7 @@ public class MonologueManager : MonoBehaviour
     public void Init()
     {
         CanvasGroup.Hide(0);
+        Gradient.SetAlpha(0);
     }
     
     public IEnumerator RunMonologue(MonologueNodeName nodeName)
@@ -37,6 +39,7 @@ public class MonologueManager : MonoBehaviour
         }
         
         CanvasGroup.Show();
+        Gradient.DOFade(.8f, .2f);
         
         var lines = MonologueContainer.Monologues[nodeName];
         var linesArr = lines.Split("\n");
@@ -113,6 +116,7 @@ public class MonologueManager : MonoBehaviour
         }
         
         Text.text = "";
+        Gradient.DOFade(0, .2f);
         CanvasGroup.Hide();
     }
 }
